@@ -3,7 +3,7 @@ import { Button, VisuallyHidden, VisuallyHiddenInput } from '@chakra-ui/react';
 
 export default function MyVisuallyHidden() {
   return (
-    <Button>
+    <Button m={10}>
       <VisuallyHidden>Checkmark</VisuallyHidden>
       <CheckIcon />
     </Button>

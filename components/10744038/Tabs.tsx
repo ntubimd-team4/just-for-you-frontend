@@ -2,7 +2,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
 export default function MyTabs() {
   return (
-    <Tabs>
+    <Tabs m={10}>
       <TabList>
         <Tab>One</Tab>
         <Tab>Two</Tab>
