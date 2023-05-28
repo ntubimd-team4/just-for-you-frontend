@@ -9,15 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@react-oauth/google": "^0.11.0",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
+    "axios": "^1.4.0",
     "eslint-config-next": "13.4.4",
     "framer-motion": "^10.12.16",
     "next": "13.4.4",
+    "next-auth": "^4.22.1",
+    "npm-check": "^6.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
