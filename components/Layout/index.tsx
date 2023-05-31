@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { Container } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export default function Layout({ children, headTitle }: {
   children: React.ReactNode,
@@ -20,10 +20,10 @@ export default function Layout({ children, headTitle }: {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main style={{ 'minHeight': '80vh' }}>
-        <Container centerContent my={10}>
+      <main style={{ 'minHeight': '70vh' }}>
+        <Box p={10}>
           {children}
-        </Container >
+        </Box >
       </main >
       <Footer />
     </>
