@@ -4,7 +4,7 @@ import { theme } from './_app';
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="zh-Hant">
       <Head />
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />

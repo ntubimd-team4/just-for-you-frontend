@@ -1,15 +1,4 @@
-import {
-  Box,
-  Container,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-  Flex,
-  Tag,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { Box, Text, Flex, useColorModeValue } from '@chakra-ui/react';
 
 const Logo = (props: any) => (
   <svg
@@ -26,12 +15,6 @@ const Logo = (props: any) => (
       fill="#2F855A"
     />
   </svg>
-);
-
-const ListHeader = ({ children }: { children: ReactNode }) => (
-  <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
-    {children}
-  </Text>
 );
 
 export default function LargeWithLogoCentered() {
