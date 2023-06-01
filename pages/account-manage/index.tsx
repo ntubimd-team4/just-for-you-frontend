@@ -17,7 +17,7 @@ export default function AccountList() {
 
         setRowData(data);
       } catch (error: any) {
-        console.log(error.message);
+        alert(error.message);
       }
     })();
   }, []);
@@ -27,8 +27,8 @@ export default function AccountList() {
       const response = await userAPI.getSingleUser(id);
 
       setSingleData(response.data);
-    } catch (err) {
-      console.log('catch', err);
+    } catch (err: any) {
+      alert(err.message);
     }
   }
 
@@ -39,8 +39,8 @@ export default function AccountList() {
       const data = response.data;
 
       setRowData(data);
-    } catch (err) {
-      console.log('catch', err);
+    } catch (err: any) {
+      alert(err.message);
     }
   }
 
