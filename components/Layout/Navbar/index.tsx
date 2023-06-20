@@ -8,6 +8,8 @@ import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useAuthContext } from '@/context/authContext';
 import { StudentLinks, TeacherLinks } from './NavData';
+import Image from 'next/image';
+import Logo from '/public/images/logo.png';
 
 const NavLink = ({ children, link }: { children: ReactNode, link: string }) => (
   <Link href={link}>{children}</Link>
@@ -33,7 +35,11 @@ export default function Simple() {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-          <Box><Link href="/">諮屬於你</Link></Box>
+          <Box className={'flex'}>
+            <Link href="/">
+              <Image src={Logo} alt={'logo'} width={40} height={40} />
+            </Link>
+          </Box>
           {status === 'authenticated' &&
             <HStack
               as={'nav'}
@@ -56,11 +62,11 @@ export default function Simple() {
                 minW={0}>
                 <Avatar
                   size={'sm'}
-                  src={session?.user.image}
+                  src={session?.user?.image || undefined}
                 />
               </MenuButton>
               <MenuList>
-                <MenuGroup title={`${session?.user.name} ${authorization}`}>
+                <MenuGroup title={`${session?.user?.name} ${authorization}`}>
                   <Link href={'/profile'}><MenuItem>我的帳戶</MenuItem></Link>
                   <MenuDivider />
                   <MenuItem onClick={handleGoogleLogOut}>登出</MenuItem>

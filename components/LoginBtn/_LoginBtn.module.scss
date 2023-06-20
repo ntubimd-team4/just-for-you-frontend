@@ -1,0 +1,30 @@
+.loginWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 2rem;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  border: 1px solid #bcbcbc;
+  padding: 1rem;
+  border-radius: 50px;
+
+  img {
+    margin-right: 1rem;
+  }
+}

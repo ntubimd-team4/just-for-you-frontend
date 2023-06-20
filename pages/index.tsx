@@ -1,31 +1,24 @@
-import Layout from '@/components/Layout';
-import LoginBtn from '@/components/LoginBtn';
-import userAPI from '@/services/userAPI';
-import { Button, Container, Textarea } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useAuthContext } from '@/context/authContext';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const { 'data': session, status } = useSession();
-  const [story, setStory] = useState('');
+  const route = useRouter();
+  const { authorization } = useAuthContext();
 
-  const handleStory = (event: any) => setStory(event?.target.value);
-  const tellStory = () => {
-    userAPI.postSummary({ 'prompt': story });
-  };
-
-  return (
-    <Layout headTitle={'首頁'}>
-      {status === 'authenticated' ?
-        <Container centerContent>
-          <h2>請告訴我您想說的話吧！</h2>
-          <Textarea placeholder="請告訴我您想說的話吧！" size="lg" onChange={(e: any) => handleStory(e)} row={10} my={10} />
-          <Button colorScheme="pink" variant="solid" onClick={() => tellStory()}>
-            確認
-          </Button>
-        </Container> :
-        <LoginBtn />
+  useEffect(() => {
+    if (status === 'authenticated') {
+      if (authorization === '學生') {
+        route.push('/story');
+      } else if (authorization === '諮商師') {
+        route.push('/account-manage');
       }
-    </Layout>
-  );
+    } else if (status === 'unauthenticated') {
+      route.push('/login');
+    } else if (status === 'loading') {
+      console.log('loading...');
+    }
+  }, [authorization, route, status]);
 }

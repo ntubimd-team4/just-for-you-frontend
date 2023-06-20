@@ -1,5 +1,5 @@
 import { Box, IconButton, Select, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, } from '@chakra-ui/react';
-import { AccountListType } from '@/types/User.interface.ts';
+import { AccountListType } from '@/types/User.interface';
 import { EditIcon } from '@chakra-ui/icons';
 import { ChangeEvent, useState } from 'react';
 import userAPI from '@/services/userAPI';
@@ -8,7 +8,7 @@ export function InitialFocus({ data }: { data: AccountListType }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [department, setDepartment] = useState(data?.department);
   const [sex, setSex] = useState(data?.userSex);
-  const handleDepartmentChange = (event: any) => console.log(event.target.value);
+  const handleDepartmentChange = (event: any) => setDepartment(event.target.value);
   const handleSexChange = (event: any) => setSex(event.target.value);
 
   async function patchAccount() {
@@ -18,8 +18,8 @@ export function InitialFocus({ data }: { data: AccountListType }) {
         'userSex': data.userSex,
         'department': data.department
       });
-    } catch (err) {
-      console.log('catch', err);
+    } catch (err: any) {
+      alert(err.message);
     }
   }
 
