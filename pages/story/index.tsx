@@ -1,11 +1,12 @@
 import Layout from '@/components/Layout';
-import { Button, Container, Textarea, Alert, AlertIcon, Badge } from '@chakra-ui/react';
+import { Button, Container, Textarea, Alert, AlertIcon, Tag } from '@chakra-ui/react';
 import userAPI from '@/services/userAPI';
 import { useState } from 'react';
 
 const title = {
   'fontSize': '40px',
-  'fontWeight': 'bold'
+  'fontWeight': 'bold',
+  'margin': '1.5rem'
 };
 
 export default function Story() {
@@ -20,29 +21,21 @@ export default function Story() {
     try {
       const response = await userAPI.postSummary({ 'prompt': story });
 
-      handleEmotion(response.data);
       setIsLoading(false);
-      setEmotionData(response.data);
+      setEmotionData(response.data.value.split(','));
       setIsTell(true);
-      alert(JSON.stringify(response.data));
     } catch (err: any) {
       setIsLoading(false);
       alert(err.message);
     }
   }
 
-  const handleEmotion = (data: any) => {
-    for (const i in data) {
-      console.log(data[i].value);
-    }
-  };
-
   return (
     <Layout headTitle={'我的樹洞'}>
       <Container centerContent>
-        <h2 style={title}>您的專屬樹洞</h2>
         {!isTell ?
           <>
+            <h2 style={title}>您的專屬樹洞</h2>
             <Textarea placeholder="請告訴我您想說的話吧！" size="lg" onChange={(e: any) => handleStory(e)} my={5} />
             <Button isLoading={loading} width="100%" colorScheme="green" color="white" variant="solid" onClick={() => tellStory()}>
               與樹洞訴說我的故事
@@ -54,13 +47,12 @@ export default function Story() {
             </Alert>
           </> :
           <>
-            {/* {emotionData?.map((data: any, index: number) => <Badge colorScheme={data[index]?.code}>情緒：{data[0].code}</Badge>
-              // data[index]?.value.map((emotion: any, i: number) =>
-              //   <Badge key={i} colorScheme={data[index]?.code}>情緒：{emotion}</Badge>))
-            )} */}
-            <Badge colorScheme={'teal'} variant="solid" m={1} fontSize="1.2em">情緒</Badge>
-            <Badge colorScheme={'blue'} variant="solid" m={1} fontSize="1.2em">情緒</Badge>
-            <Badge colorScheme={'cyan'} variant="solid" m={1} fontSize="1.2em">情緒</Badge>
+            <h2 style={title}>樹洞感應到您有的情緒</h2>
+            <div>
+              {emotionData.map((d, i) =>
+                <Tag size={'lg'} key={i} variant="solid" colorScheme="teal" m={2}>{d}</Tag>)
+              }
+            </div>
             <Alert status="warning" my={5}>
               <AlertIcon />
               注意：本系統並非心理諮商醫療診斷工具。如果您正面臨嚴重的心理健康問題，請立即尋求專業心理醫療服務。
