@@ -1,31 +1,31 @@
 import { ReactNode } from 'react';
 import {
-  Box, Flex, Avatar, HStack, Link, IconButton, Button, Menu, MenuButton, MenuList, MenuItem,
-  MenuDivider, useDisclosure, useColorModeValue, Stack,
+  Box, Flex, Avatar, HStack, IconButton, Button, Menu, MenuButton, MenuList, MenuItem,
+  MenuDivider, useDisclosure, useColorModeValue, Stack, MenuGroup,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
+import { useAuthContext } from '@/context/authContext';
+import { StudentLinks, TeacherLinks } from './NavData';
+import Image from 'next/image';
+import Logo from '/public/images/logo.png';
 
-const Links = ['樹洞', '推薦', 'Team'];
-
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      'textDecoration': 'none',
-      'bg': useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}>
-    {children}
-  </Link>
+const NavLink = ({ children, link }: { children: ReactNode, link: string }) => (
+  <Link href={link}>{children}</Link>
 );
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { 'data': session, status } = useSession();
+  const { authorization } = useAuthContext();
+
+  async function handleGoogleLogOut() {
+    signOut({ 'callbackUrl': 'http://localhost:3000' });
+  }
 
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={10}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <IconButton
           size={'md'}
@@ -35,46 +35,53 @@ export default function Simple() {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-          <Box>諮屬於你</Box>
-          <HStack
-            as={'nav'}
-            spacing={4}
-            display={{ 'base': 'none', 'md': 'flex' }}>
-            {Links.map(link => (
-              <NavLink key={link}>{link}</NavLink>
-            ))}
-          </HStack>
+          <Box className={'flex'}>
+            <Link href="/">
+              <Image src={Logo} alt={'logo'} width={40} height={40} />
+            </Link>
+          </Box>
+          {status === 'authenticated' &&
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ 'base': 'none', 'md': 'flex' }}>
+              {(authorization === '學生' ? StudentLinks : TeacherLinks).map(data => (
+                <NavLink key={data.link} link={data.link}>{data.text}</NavLink>
+              ))}
+            </HStack>
+          }
         </HStack>
-        <Flex alignItems={'center'}>
-          <Menu>
-            <MenuButton
-              as={Button}
-              rounded={'full'}
-              variant={'link'}
-              cursor={'pointer'}
-              minW={0}>
-              <Avatar
-                size={'sm'}
-                src={
-                  'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                }
-              />
-            </MenuButton>
-            <MenuList>
-              <MenuItem>Link 1</MenuItem>
-              <MenuItem>Link 2</MenuItem>
-              <MenuDivider />
-              <MenuItem>登出</MenuItem>
-            </MenuList>
-          </Menu>
-        </Flex>
+        {status === 'authenticated' &&
+          <Flex alignItems={'center'}>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={'full'}
+                variant={'link'}
+                cursor={'pointer'}
+                minW={0}>
+                <Avatar
+                  size={'sm'}
+                  src={session?.user?.image || undefined}
+                />
+              </MenuButton>
+              <MenuList>
+                <MenuGroup title={`${session?.user?.name} ${authorization}`}>
+                  <Link href={'/profile'}><MenuItem>我的帳戶</MenuItem></Link>
+                  <MenuDivider />
+                  <MenuItem onClick={handleGoogleLogOut}>登出</MenuItem>
+                </MenuGroup>
+              </MenuList>
+            </Menu>
+          </Flex>
+        }
       </Flex>
 
       {isOpen ? (
         <Box pb={4} display={{ 'md': 'none' }}>
           <Stack as={'nav'} spacing={4}>
-            {Links.map(link => (
-              <NavLink key={link}>{link}</NavLink>
+            {(authorization === '學生' ? StudentLinks : TeacherLinks).map(data => (
+              <NavLink key={data.link} link={data.link}>{data.text}</NavLink>
             ))}
           </Stack>
         </Box>
