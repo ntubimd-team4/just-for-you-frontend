@@ -8,10 +8,11 @@ import {
   Stack,
   Avatar,
   Badge,
-  Button,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import userAPI from '@/services/userAPI';
+import { InitialFocus } from '@/components/Modal';
+import { AccountListType } from '@/types/User.interface';
 
 export type AccountType = {
   userName: string,
@@ -24,6 +25,7 @@ export type AccountType = {
 
 export default function Profile() {
   const [profileData, setProfileData] = useState<AccountType>();
+  const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
     (async () => {
@@ -37,6 +39,16 @@ export default function Profile() {
       }
     })();
   }, []);
+
+  async function handleEdit(id: string | undefined) {
+    try {
+      const response = await userAPI.getSingleUser(id);
+
+      setSingleData(response.data);
+    } catch (err: any) {
+      alert(err.message);
+    }
+  }
 
   return (
     <Layout headTitle={'我的帳戶'}>
@@ -85,27 +97,12 @@ export default function Profile() {
             </Badge>
           </Stack>
 
-          <Stack mt={8} direction={'row'} spacing={4}>
-            <Button
-              flex={1}
-              fontSize={'sm'}
-              rounded={'full'}
-              _focus={{ 'bg': 'gray.200', }}>
-              編輯資料
-            </Button>
+          <Stack mt={8} direction={'row'} spacing={4}
+            onClick={() => handleEdit(profileData?.userId)}>
+            <InitialFocus data={singleData} />
           </Stack>
         </Box>
       </Center>
-      {/* <Container centerContent>
-        <WrapItem>
-          <Avatar size="2xl" name={profileData?.userName} src={profileData?.picture} />{' '}
-        </WrapItem>
-        <h1>{profileData?.userName}</h1>
-        <h1>{profileData?.role}</h1>
-        <h1>{profileData?.userId}</h1>
-        <h1>{profileData?.department ? profileData?.department : 'no'}</h1>
-        <h1>{profileData?.userSex ? profileData?.userSex : 'no'}</h1>
-      </Container> */}
     </Layout>
   );
 }

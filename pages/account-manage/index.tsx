@@ -52,7 +52,7 @@ export default function AccountList() {
             <Tr>
               <Th>使用者姓名</Th>
               <Th>使用者信箱</Th>
-              <Th>系別</Th>
+              <Th>科系</Th>
               <Th>性別</Th>
               <Th>身分</Th>
               <Th>修改</Th>

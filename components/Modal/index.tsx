@@ -1,8 +1,8 @@
-import { Box, IconButton, Select, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, } from '@chakra-ui/react';
+import { Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, } from '@chakra-ui/react';
 import { AccountListType } from '@/types/User.interface';
-import { EditIcon } from '@chakra-ui/icons';
 import { ChangeEvent, useState } from 'react';
 import userAPI from '@/services/userAPI';
+import { useRouter } from 'next/router';
 
 export function InitialFocus({ data }: { data: AccountListType }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -10,14 +10,17 @@ export function InitialFocus({ data }: { data: AccountListType }) {
   const [sex, setSex] = useState(data?.userSex);
   const handleDepartmentChange = (event: any) => setDepartment(event.target.value);
   const handleSexChange = (event: any) => setSex(event.target.value);
+  const router = useRouter();
 
   async function patchAccount() {
     try {
       await userAPI.patchAccount({
         'userId': data.userId,
-        'userSex': data.userSex,
-        'department': data.department
+        'userSex': sex === '男' ? 0 : 1,
+        'department': department
       });
+      onClose();
+      router.reload();
     } catch (err: any) {
       alert(err.message);
     }
@@ -25,7 +28,10 @@ export function InitialFocus({ data }: { data: AccountListType }) {
 
   return (
     <>
-      <IconButton onClick={onOpen} aria-label="修改資料" icon={<EditIcon />} />
+      <Button flex={1}
+        fontSize={'sm'}
+        rounded={'full'}
+        _focus={{ 'bg': 'gray.200', }} onClick={onOpen} aria-label="修改資料">編輯資料</Button>
       <Modal
         isOpen={isOpen}
         onClose={onClose}
@@ -38,7 +44,7 @@ export function InitialFocus({ data }: { data: AccountListType }) {
             <Box>{data?.role}{' / '}{data?.userId}</Box>
 
             <FormControl mt={4}>
-              <FormLabel>系別</FormLabel>
+              <FormLabel>科系</FormLabel>
               <Input placeholder="請填寫科系"
                 onChange={(e: ChangeEvent) => handleDepartmentChange(e)}
                 value={department}
@@ -47,10 +53,10 @@ export function InitialFocus({ data }: { data: AccountListType }) {
 
             <FormControl mt={4}>
               <FormLabel>性別</FormLabel>
-              <Select placeholder="請選擇性別" onChange={(e: ChangeEvent) => handleSexChange(e)} value={sex}>
-                <option value="男">男</option>
-                <option value="女">女</option>
-              </Select>
+              <Input placeholder="請填寫性別"
+                onChange={(e: ChangeEvent) => handleSexChange(e)}
+                value={sex}
+              />
             </FormControl>
           </ModalBody>
 

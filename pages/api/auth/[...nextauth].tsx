@@ -18,7 +18,7 @@ export default NextAuth({
       return token;
     },
     async session({ session, token }) {
-      session.id_token = token.id_token;
+      session.id_token = token.id_token as string;
       return session;
     },
     async signIn({ account, profile }) {
