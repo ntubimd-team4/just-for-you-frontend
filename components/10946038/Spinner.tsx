@@ -1,12 +1,14 @@
-import { Spinner } from '@chakra-ui/react';
+import { Accordion, Spinner } from '@chakra-ui/react';
 export default function MySpinner(){
   return (
-    <Spinner
-      thickness="4px"
-      speed="0.65s"
-      emptyColor="gray.200"
-      color="blue.500"
-      size="xl"
-    />
+    <Accordion m={5}>
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
+      />
+    </Accordion>
   );
 }
