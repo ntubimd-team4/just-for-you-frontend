@@ -23,12 +23,17 @@ export default function Post({ postData }) {
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
-  return {
-    paths,
-    fallback: false
-  }
+  return [
+    {
+      params: {
+        // Statically Generates /posts/a/b/c
+        id: ['a', 'b', 'c'],
+      },
+    },
+    //...
+  ];
 }
 
 export async function getStaticProps({ params }) {
-  // params.id will be like ['a', 'b', 'c']
+  
 }
