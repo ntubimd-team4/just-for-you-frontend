@@ -1,4 +1,4 @@
-console.log("Hello \n Word"); //換行"\n"
+/*console.log("Hello \n Word"); //換行"\n"
 
 let user_name = window.prompt("請輸入你的姓名"); //有一個視窗跳出來
 window.alert("歡迎來到網站" + user_name);
@@ -41,3 +41,27 @@ console.log(3 !== 5); //!= 不等於
 console.log(3 === "3"); //== 代表去檢查operators的值,也檢查data type的值 結果為fals1e 因為type不一樣
 console.log(true && false); //&&且
 console.log(true || false); //||或
+*/
+
+let age = prompt("請輸入年齡(阿拉伯數字):");
+
+age = Number(age);
+
+if (age >= 0 && age <= 12) {
+  alert("兒童票 100元");
+} else if (age > 12 && age <= 65) {
+  alert("成人票 250元");
+} else if (age > 65 && age <= 125) {
+  alert("敬老票 150元");
+}
+
+//Falsy Values 有false 、 0,-0,0n 、 "" '' ``(empty string) 、 null 、 undefined 、 NaN
+//&&規則中 left is true, 顯示right值
+console.log(3 && 10);
+//left is not true,顯示left值
+console.log(-0 && 100);
+
+//||規則中 left is true,顯示left值
+console.log(6 || 100);
+//left is not true,顯示right值
+console.log(null || 100);
