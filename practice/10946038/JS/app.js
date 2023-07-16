@@ -43,25 +43,51 @@
 // console.log(true || false); //||或
 
 //----------------------------------------------------------------
-let age = prompt("請輸入年齡(阿拉伯數字):");
+// let age = prompt("請輸入年齡(阿拉伯數字):");
 
-age = Number(age);
+// age = Number(age);
 
-if (age >= 0 && age <= 12) {
-  alert("兒童票 100元");
-} else if (age > 12 && age <= 65) {
-  alert("成人票 250元");
-} else if (age > 65 && age <= 125) {
-  alert("敬老票 150元");
+// if (age >= 0 && age <= 12) {
+//   alert("兒童票 100元");
+// } else if (age > 12 && age <= 65) {
+//   alert("成人票 250元");
+// } else if (age > 65 && age <= 125) {
+//   alert("敬老票 150元");
+// }
+
+// //Falsy Values 有false 、 0,-0,0n 、 "" '' ``(empty string) 、 null 、 undefined 、 NaN
+// //&&規則中 left is true, 顯示right值
+// console.log(3 && 10);
+// //left is not true,顯示left值
+// console.log(-0 && 100);
+
+// //||規則中 left is true,顯示left值
+// console.log(6 || 100);
+// //left is not true,顯示right值
+// console.log(null || 100);
+
+//---------------------------------------------------------------------
+function sayHi(myParamater, myParamater2) {
+  console.log("你好，我的名子是" + myParamater);
+  console.log("我今年" + myParamater2 + "歲");
 }
 
-//Falsy Values 有false 、 0,-0,0n 、 "" '' ``(empty string) 、 null 、 undefined 、 NaN
-//&&規則中 left is true, 顯示right值
-console.log(3 && 10);
-//left is not true,顯示left值
-console.log(-0 && 100);
+sayHi("Mike", 35);
 
-//||規則中 left is true,顯示left值
-console.log(6 || 100);
-//left is not true,顯示right值
-console.log(null || 100);
+function cirle(r) {
+  return 3.14 * r * r;
+}
+
+let area1 = cirle(10);
+let area2 = cirle(5);
+console.log(area1 + area2);
+
+//攝氏溫度轉換成華氏溫度
+
+function convertor(c) {
+  return c * 1.8 + 32;
+}
+
+let input = Number(prompt("請輸入溫度: (°C)"));
+let result = convertor(input);
+alert("換算後的溫度為:" + result + "°F");
