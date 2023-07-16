@@ -1,3 +1,4 @@
+/*
 console.log("Hello \n Word"); //換行"\n"
 
 let user_name = window.prompt("請輸入你的姓名"); //有一個視窗跳出來
@@ -41,3 +42,60 @@ console.log(3 !== 5); //!= 不等於
 console.log(3 === "3"); //== 代表去檢查operators的值,也檢查data type的值 結果為fals1e 因為type不一樣
 console.log(true && false); //&&且
 console.log(true || false); //||或
+
+let age = prompt("請輸入年齡(阿拉伯數字):");
+
+age = Number(age);
+
+if (age >= 0 && age <= 12) {
+  alert("兒童票 100元");
+} else if (age > 12 && age <= 65) {
+  alert("成人票 250元");
+} else if (age > 65 && age <= 125) {
+  alert("敬老票 150元");
+}
+
+//Falsy Values 有false 、 0,-0,0n 、 "" '' ``(empty string) 、 null 、 undefined 、 NaN
+//&&規則中 left is true, 顯示right值
+console.log(3 && 10);
+//left is not true,顯示left值
+console.log(-0 && 100);
+
+//||規則中 left is true,顯示left值
+console.log(6 || 100);
+//left is not true,顯示right值
+console.log(null || 100);
+*/
+
+//定義function
+function f() {
+  console.log("這是我的第一個function");
+}
+//執行function
+f();
+
+function sayHi(name, age) {
+  console.log("你好，我的名字是" + name);
+  console.log("我今年" + age + "歲");
+}
+
+sayHi("Mike", 35);
+
+//circle function的參數為一個半徑，功能為算出圓面積
+function circle(r) {
+  return 3.14 * r * r;
+}
+
+let area1 = circle(10);
+let area2 = circle(5);
+console.log(area1 + area2);
+
+//攝氏轉華氏
+function convertor(c) {
+  return c * 1.8 + 32;
+}
+
+let input = Number(prompt("請輸入溫度：(°C)"));
+let result = convertor(input);
+alert("換算後的溫度為" + result + "°F");
+
