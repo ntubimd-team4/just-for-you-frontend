@@ -67,7 +67,7 @@ console.log(6 || 100);
 console.log(null || 100);
 */
 
-//declaration,definition定義function
+//定義function
 function f() {
   console.log("這是我的第一個function");
 }
