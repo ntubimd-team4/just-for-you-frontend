@@ -65,7 +65,6 @@ console.log(-0 && 100);
 console.log(6 || 100);
 //left is not true,顯示right值
 console.log(null || 100);
-*/
 
 //定義function
 function f() {
@@ -98,4 +97,30 @@ function convertor(c) {
 let input = Number(prompt("請輸入溫度：(°C)"));
 let result = convertor(input);
 alert("換算後的溫度為" + result + "°F");
+*/
+let friends = ["Grace", "Mike", "Spencer", "Esther", "Slade", "Wilson"];
+//array的值被稱為元素(element)
+let anotherVariable = friends;
+anotherVariable[0] = "Michael";
+
+console.log("friends array變成是：");
+console.log(friends);
+console.log("anotherVariable array變成是：");
+console.log(anotherVariable);
+
+let deposit = 500;
+let anotherDeposit = deposit;
+anotherDeposit = 600;
+console.log("deposit為", deposit, "anotherDepossit為", anotherDeposit);
+//121
+let frieds = ["Grace", "Mike", "Spencer", "Esther", "Slade"];
+let returnValue = frieds.push("Jared");
+console.log(returnValue);
+//陣列後push<=>pop,陣列前shift<=>unshift
+let myArr = [
+  ["name", "address", "age"],
+  ["Mike", "台灣", 35],
+  ["Grace", "美國", 26],
+];
+console.log(myArr[1][0]);
 
