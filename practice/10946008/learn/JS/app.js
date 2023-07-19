@@ -123,7 +123,7 @@ let myArr = [
   ["Grace", "美國", 26],
 ];
 console.log(myArr[1][0]);
-*/
+
 //125
 function hello() {
   console.log("Hello World");
@@ -171,5 +171,28 @@ console.log(typeof hello);
 let arrr = [1, 2, 3, 4, 5];
 //判斷是否為array
 console.log(Array.isArray(arrr));
+*/
 //126
+for (let i = 0; i <= 10; i++) {
+  console.log(i);
+}
+console.log("for loop執行完畢");
+//宣告一個計數器
+let i = 0;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 10);
+
+for (let i = 0; i < 100; i++) {
+  console.log(i);
+}
+
+let j = 0;
+while (j < 100) {
+  console.log(j);
+  j++;
+}
+
 
