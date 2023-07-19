@@ -67,27 +67,65 @@
 // console.log(null || 100);
 
 //---------------------------------------------------------------------
-function sayHi(myParamater, myParamater2) {
-  console.log("你好，我的名子是" + myParamater);
-  console.log("我今年" + myParamater2 + "歲");
-}
+// function sayHi(myParamater, myParamater2) {
+//   console.log("你好，我的名子是" + myParamater);
+//   console.log("我今年" + myParamater2 + "歲");
+// }
 
-sayHi("Mike", 35);
+// sayHi("Mike", 35);
 
-function cirle(r) {
-  return 3.14 * r * r;
-}
+// function cirle(r) {
+//   return 3.14 * r * r;
+// }
 
-let area1 = cirle(10);
-let area2 = cirle(5);
-console.log(area1 + area2);
+// let area1 = cirle(10);
+// let area2 = cirle(5);
+// console.log(area1 + area2);
 
-//攝氏溫度轉換成華氏溫度
+// //攝氏溫度轉換成華氏溫度
 
-function convertor(c) {
-  return c * 1.8 + 32;
-}
+// function convertor(c) {
+//   return c * 1.8 + 32;
+// }
 
-let input = Number(prompt("請輸入溫度: (°C)"));
-let result = convertor(input);
-alert("換算後的溫度為:" + result + "°F");
+// let input = Number(prompt("請輸入溫度: (°C)"));
+// let result = convertor(input);
+// alert("換算後的溫度為:" + result + "°F");
+// //7/16
+
+//--------------------------------------------------------------------------
+let friends = ['Grace', 'Mike', 'Spence', 'Esther', 'Slade'];
+
+friends.unshift('shan');//最前面增加第一個
+//friends.shift(); //最前面拿走
+//friends.push('MOmo'); //變成6多增增加一個
+//friends.pop(); //減少一個
+console.log(friends);
+console.log(friends.length);
+
+let anotherVariable = friends;
+
+anotherVariable[0] = 'Michael';
+
+console.log('friends array變成是:');
+console.log(friends);
+
+console.log('anotherVariable array變成是:');
+console.log(anotherVariable);
+
+//let anotherArray = [null, false, 3.14159]; //可以是不同資料混合
+
+let deposit = 500;
+let anotherDeposit = deposit;
+
+anotherDeposit = 600;
+console.log('deposit 為', deposit, 'anotherDeposit為', anotherDeposit);
+
+let arr1 = [1, 2, 3];
+let arr2 = arr1;
+
+console.log(arr1 == arr2);
+
+let myArr = [['name', 'address', 'age'], ['Esther', '台灣', 35], ['Mike', '美國', '26']];
+
+console.log(myArr[1][0]);
