@@ -65,7 +65,6 @@ console.log(-0 && 100);
 console.log(6 || 100);
 //left is not true,顯示right值
 console.log(null || 100);
-*/
 
 //定義function
 function f() {
@@ -98,4 +97,79 @@ function convertor(c) {
 let input = Number(prompt("請輸入溫度：(°C)"));
 let result = convertor(input);
 alert("換算後的溫度為" + result + "°F");
+
+let friends = ["Grace", "Mike", "Spencer", "Esther", "Slade", "Wilson"];
+//array的值被稱為元素(element)
+let anotherVariable = friends;
+anotherVariable[0] = "Michael";
+
+console.log("friends array變成是：");
+console.log(friends);
+console.log("anotherVariable array變成是：");
+console.log(anotherVariable);
+
+let deposit = 500;
+let anotherDeposit = deposit;
+anotherDeposit = 600;
+console.log("deposit為", deposit, "anotherDepossit為", anotherDeposit);
+//121
+let frieds = ["Grace", "Mike", "Spencer", "Esther", "Slade"];
+let returnValue = frieds.push("Jared");
+console.log(returnValue);
+//陣列後push<=>pop,陣列前shift<=>unshift
+let myArr = [
+  ["name", "address", "age"],
+  ["Mike", "台灣", 35],
+  ["Grace", "美國", 26],
+];
+console.log(myArr[1][0]);
+*/
+//125
+function hello() {
+  console.log("Hello World");
+}
+hello();
+
+let Wilson = {
+  //properties(key-value pair),methods
+  first_name: "Wilson",
+  last_name: "Ren",
+  age: 26,
+  is_married: true,
+  spouse: "Grace",
+  //this指Wilson這個正在執行的物件
+  sayHi() {
+    console.log(this.first_name + "says hi");
+  },
+
+  walk() {
+    console.log("Wilson is walking...");
+  },
+
+  speak(words) {
+    console.log("Wilson says" + words);
+  },
+};
+Wilson.sayHi();
+Wilson.walk();
+Wilson.speak("今天心情不錯");
+
+function hello() {
+  console.log("hello");
+  console.log(this);
+}
+hello();
+let arr = [1, 2, 3, 4, 5];
+console.log(typeof arr); //object
+
+function hello() {
+  console.log("hello world");
+}
+console.log(typeof hello);
+//function, array are both special types of object
+
+let arrr = [1, 2, 3, 4, 5];
+//判斷是否為array
+console.log(Array.isArray(arrr));
+//126
 
