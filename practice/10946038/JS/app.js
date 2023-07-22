@@ -131,27 +131,59 @@
 // console.log(myArr[1][0]);
 
 //------------------------------------------------------------------------
-function sayHelloToUser(){
-  alert('三秒過了...');
-}
+// function sayHelloToUser(){
+//   alert('三秒過了...');
+// }
 
-let interval = window.setInterval(sayHelloToUser, 3000);
+// let interval = window.setInterval(sayHelloToUser, 3000);
 
-window.clearInterval(interval); //clearInterval停止setInterval
+// window.clearInterval(interval); //clearInterval停止setInterval
 
-let Grace = {
-  'name': 'Grace',
-  'age': 26,
+// let Grace = {
+//   'name': 'Grace',
+//   'age': 26,
+// };
+
+// let Wilson = {
+//   'name': 'Wilson',
+//   'age': 26,
+//   'spouse': Grace,
+// };
+
+// console.log(Wilson.spouse.name);
+// //--------------------------------------------------------------------
+// let found_elements = document.querySelectorAll('.my-p');
+
+// console.log(found_elements);
+
+//-------------------------------------------------------------
+let addiction = function (a, b){
+  return a + b;
 };
+
+console.log(addiction, (10, 5));
 
 let Wilson = {
   'name': 'Wilson',
-  'age': 26,
-  'spouse': Grace,
+  greet() {
+    console.log(this.name + '打招呼');
+  },
+  'walk': function () {
+    console.log(this.name + '正在走路');
+  },
 };
 
-console.log(Wilson.spouse.name);
-//--------------------------------------------------------------------
-let found_elements = document.querySelectorAll('.my-p');
+Wilson.greet();
+Wilson.walk();
 
-console.log(found_elements);
+//--------------------------------------------------------------
+
+// window.addEventListener('click', function (){
+//   alert('有人正在點擊畫面');
+// });
+//---另一種寫法---
+//arrow function
+window.addEventListener('click', () => {
+  alert('有人正在按螢幕');
+});
+//---------------------------------
