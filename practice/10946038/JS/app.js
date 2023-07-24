@@ -94,38 +94,96 @@
 // //7/16
 
 //--------------------------------------------------------------------------
-let friends = ['Grace', 'Mike', 'Spence', 'Esther', 'Slade'];
+// let friends = ['Grace', 'Mike', 'Spence', 'Esther', 'Slade'];
 
-friends.unshift('shan');//最前面增加第一個
-//friends.shift(); //最前面拿走
-//friends.push('MOmo'); //變成6多增增加一個
-//friends.pop(); //減少一個
-console.log(friends);
-console.log(friends.length);
+// friends.unshift('shan');//最前面增加第一個
+// //friends.shift(); //最前面拿走
+// //friends.push('MOmo'); //變成6多增增加一個
+// //friends.pop(); //減少一個
+// console.log(friends);
+// console.log(friends.length);
 
-let anotherVariable = friends;
+// let anotherVariable = friends;
 
-anotherVariable[0] = 'Michael';
+// anotherVariable[0] = 'Michael';
 
-console.log('friends array變成是:');
-console.log(friends);
+// console.log('friends array變成是:');
+// console.log(friends);
 
-console.log('anotherVariable array變成是:');
-console.log(anotherVariable);
+// console.log('anotherVariable array變成是:');
+// console.log(anotherVariable);
 
-//let anotherArray = [null, false, 3.14159]; //可以是不同資料混合
+// //let anotherArray = [null, false, 3.14159]; //可以是不同資料混合
 
-let deposit = 500;
-let anotherDeposit = deposit;
+// let deposit = 500;
+// let anotherDeposit = deposit;
 
-anotherDeposit = 600;
-console.log('deposit 為', deposit, 'anotherDeposit為', anotherDeposit);
+// anotherDeposit = 600;
+// console.log('deposit 為', deposit, 'anotherDeposit為', anotherDeposit);
 
-let arr1 = [1, 2, 3];
-let arr2 = arr1;
+// let arr1 = [1, 2, 3];
+// let arr2 = arr1;
 
-console.log(arr1 == arr2);
+// console.log(arr1 == arr2);
 
-let myArr = [['name', 'address', 'age'], ['Esther', '台灣', 35], ['Mike', '美國', '26']];
+// let myArr = [['name', 'address', 'age'], ['Esther', '台灣', 35], ['Mike', '美國', '26']];
 
-console.log(myArr[1][0]);
+// console.log(myArr[1][0]);
+
+//------------------------------------------------------------------------
+// function sayHelloToUser(){
+//   alert('三秒過了...');
+// }
+
+// let interval = window.setInterval(sayHelloToUser, 3000);
+
+// window.clearInterval(interval); //clearInterval停止setInterval
+
+// let Grace = {
+//   'name': 'Grace',
+//   'age': 26,
+// };
+
+// let Wilson = {
+//   'name': 'Wilson',
+//   'age': 26,
+//   'spouse': Grace,
+// };
+
+// console.log(Wilson.spouse.name);
+// //--------------------------------------------------------------------
+// let found_elements = document.querySelectorAll('.my-p');
+
+// console.log(found_elements);
+
+//-------------------------------------------------------------
+let addiction = function (a, b){
+  return a + b;
+};
+
+console.log(addiction, (10, 5));
+
+let Wilson = {
+  'name': 'Wilson',
+  greet() {
+    console.log(this.name + '打招呼');
+  },
+  'walk': function () {
+    console.log(this.name + '正在走路');
+  },
+};
+
+Wilson.greet();
+Wilson.walk();
+
+//--------------------------------------------------------------
+
+// window.addEventListener('click', function (){
+//   alert('有人正在點擊畫面');
+// });
+//---另一種寫法---
+//arrow function
+window.addEventListener('click', () => {
+  alert('有人正在按螢幕');
+});
+//---------------------------------
