@@ -1,8 +1,13 @@
+import Nav from "./Nav";
+import info from "./info";
 
 function App() {
-  return <div>
-    <h1>這是app.js的標籤</h1>
-    </div>;
+  return( 
+  <div>
+    <Nav />
+    <info />
+    </div>
+  );
 }
 
 export default App;
