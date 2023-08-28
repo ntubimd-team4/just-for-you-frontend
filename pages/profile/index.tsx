@@ -10,7 +10,7 @@ import {
   Badge,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import userAPI from '@/services/userAPI';
+import userAPI from '@/services/userAccountAPI';
 import { InitialFocus } from '@/components/Modal';
 import { AccountListType } from '@/types/User.interface';
 

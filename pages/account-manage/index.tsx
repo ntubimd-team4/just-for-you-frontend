@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import userAPI from '@/services/userAPI';
+import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch } from '@chakra-ui/react';
 import { InitialFocus } from '@/components/Modal';
