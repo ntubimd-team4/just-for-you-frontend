@@ -5,7 +5,7 @@ export const USER_NOT_LOGIN = 'User - NotLogin';
 
 const API = axios.create({ 'baseURL': process.env.NEXT_PUBLIC_API_URL });
 
-API.interceptors.request.use(function (config: AxiosRequestConfig) {
+API.interceptors.request.use((config: AxiosRequestConfig) => {
   if (!config) {
     config = {};
   }
