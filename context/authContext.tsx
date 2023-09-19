@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
-import userAPI from '@/services/userAPI';
+import userAPI from '@/services/userAccountAPI';
 
 export type AuthContextType = {
   authorization: string,

@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout';
 import { Button, Container, Textarea, Alert, AlertIcon, Tag } from '@chakra-ui/react';
-import userAPI from '@/services/userAPI';
+import userAPI from '@/services/userAccountAPI';
 import { useState } from 'react';
 
 const title = {

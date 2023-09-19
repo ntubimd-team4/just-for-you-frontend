@@ -1,7 +1,7 @@
 import { Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, } from '@chakra-ui/react';
 import { AccountListType } from '@/types/User.interface';
 import { ChangeEvent, useState } from 'react';
-import userAPI from '@/services/userAPI';
+import userAPI from '@/services/userAccountAPI';
 import { useRouter } from 'next/router';
 
 export function InitialFocus({ data }: { data: AccountListType }) {
