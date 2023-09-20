@@ -15,7 +15,7 @@ const NavLink = ({ children, link }: { children: ReactNode, link: string }) => (
   <Link href={link}>{children}</Link>
 );
 
-export default function Simple() {
+export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { 'data': session, status } = useSession();
   const { authorization } = useAuthContext();

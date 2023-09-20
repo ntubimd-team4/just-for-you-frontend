@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+import Layout from '@/components/backend/Layout';
 import { Button } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
@@ -11,7 +11,7 @@ export default function MyRecommend() {
   const route = useRouter();
 
   return (
-    <Layout headTitle={'我的推薦'}>
+    <Layout>
       <h2 style={title}>功能開發中...</h2>
       <Button width="100%" colorScheme="green" color="white" my={5} variant="solid" onClick={() => route.push('/')}>
         回首頁
