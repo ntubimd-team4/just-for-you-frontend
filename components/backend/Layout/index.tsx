@@ -9,20 +9,19 @@ const style = {
   'alignItems': 'center'
 };
 
-export default function Layout({ children, headTitle }: {
-  children: React.ReactNode,
-  headTitle: string
+export default function Layout({ children }: {
+  children: React.ReactNode
 }) {
   return (
     <>
       <Head>
-        <title>{`諮屬於你-${headTitle}`}</title>
+        <title>諮屬於你</title>
         <meta charSet="UTF-8" />
         <meta name="description" content="諮屬於你-找到您的心靈場所" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow" />
         <meta name="copyright" content="諮屬於你" />
-        <meta name="og:title" content={`諮屬於你-${headTitle}`} />
+        <meta name="og:title" content="諮屬於你" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />

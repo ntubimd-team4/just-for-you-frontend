@@ -1,6 +1,6 @@
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
-import GoogleLogo from '../../public/images/google-logo.png';
+import GoogleLogo from '/public/images/google-logo.png';
 import styles from './_LoginBtn.module.scss';
 
 export default function LoginBtn() {
