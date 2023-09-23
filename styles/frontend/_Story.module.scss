@@ -1,0 +1,132 @@
+.storyConatiner {
+    min-height: calc(100vh - 80px - 4rem);
+    height: calc(100vh - 80px - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .text {
+        width: 100%;
+        background-color: #ffcc68;
+        padding: 1rem;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .textarea {
+            min-width: calc(100% - 80px - 1rem);
+            min-height: 100px;
+            max-height: 100px;
+            border: 0;
+            border: 1px solid #d6d6d6;
+            outline-color: #ffe9bd;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .sendBtn {
+            width: 80px;
+            height: 40px;
+            margin-top: auto;
+            margin-left: 1rem;
+            padding-top: 1px;
+            border-radius: 50px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+
+            &.available {
+                background-color: #E79C0B;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            &.disable {
+                background-color: #dfdfdf;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.responseContainer {
+    display: flex;
+    height: 100%;
+
+    .role {
+        width: 50%;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        svg {
+            transform: scale(1.5);
+        }
+    }
+
+    .content {
+        width: 50%;
+
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .tagGroup {
+            display: flex;
+
+            .tag {
+                width: 100px;
+                height: 100px;
+                background-color: #fff;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 1rem;
+            }
+        }
+
+        .playList {
+            margin-top: 3rem;
+
+            .list {
+                display: flex;
+                align-items: center;
+                padding: 1rem 0;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid #7a7a7a;
+
+                .song {
+                    font-weight: bold;
+                }
+
+                .cover {
+                    width: 100px;
+                    height: 50px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    margin-right: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .mark {
+                    margin-left: auto;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

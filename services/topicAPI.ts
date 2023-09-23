@@ -1,11 +1,13 @@
 import API from './API';
 
-const topicAPI = {
-    'patchTopic': ((data: any): Promise<Response> =>
-        API.patch('/topic', data)),
+const BASE_URL = '/topic';
 
-    'deleteTopic': ((tid: string): Promise<Response> =>
-        API.delete(`/topic/${tid}`)),
+const topicAPI = {
+  'patchTopic': (data: any): Promise<Response> =>
+    API.patch(BASE_URL, data),
+
+  'deleteTopic': (tid: string): Promise<Response> =>
+    API.delete(`${BASE_URL}/${tid}`),
 };
 
 export default topicAPI;

@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+import Layout from '@/components/backend/Layout';
 import {
   Box,
   Center,
@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
-import { InitialFocus } from '@/components/Modal';
+import { InitialFocus } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
 
 export type AccountType = {
@@ -51,7 +51,7 @@ export default function Profile() {
   }
 
   return (
-    <Layout headTitle={'我的帳戶'}>
+    <Layout>
       <Center py={6}>
         <Box
           maxW={'320px'}

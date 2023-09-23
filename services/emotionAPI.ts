@@ -1,11 +1,13 @@
 import API from './API';
 
-const emotionAPI = {
-  'patchEmotionalTag': ((data: any): Promise<Response> =>
-    API.patch('/emotion', data)),
+const BASE_URL = '/emotion';
 
-  'deleteEmotionalTag': (eid?: string): Promise<Response> =>
-    API.delete(`/emotion/${eid}`),
+const emotionAPI = {
+  'patchEmotionTag': (eid: any): Promise<Response> =>
+    API.patch(BASE_URL, eid),
+
+  'deleteEmotionTag': (eid?: string): Promise<Response> =>
+    API.delete(`${BASE_URL}/${eid}`),
 };
 
 export default emotionAPI;

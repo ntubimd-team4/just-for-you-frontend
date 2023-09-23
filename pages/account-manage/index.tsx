@@ -1,8 +1,8 @@
-import Layout from '@/components/Layout';
+import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch } from '@chakra-ui/react';
-import { InitialFocus } from '@/components/Modal';
+import { InitialFocus } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
 
 export default function AccountList() {
@@ -34,7 +34,7 @@ export default function AccountList() {
 
   async function handleStatue(id: string) {
     try {
-      await userAPI.patchStatus(id);
+      await userAPI.patchStatus({ 'id': id });
       const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
       const data = response.data;
 
@@ -45,7 +45,7 @@ export default function AccountList() {
   }
 
   return (
-    <Layout headTitle={'帳號管理'}>
+    <Layout>
       <TableContainer>
         <Table variant="simple">
           <Thead>

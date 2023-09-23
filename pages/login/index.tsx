@@ -1,9 +1,9 @@
-import Layout from '@/components/Layout';
-import LoginBtn from '@/components/LoginBtn';
+import Layout from '@/components/backend/Layout';
+import LoginBtn from '@/components/backend/LoginBtn';
 
 export default function Login() {
   return (
-    <Layout headTitle={'登入'}>
+    <Layout>
       <LoginBtn />
     </Layout>
   );
