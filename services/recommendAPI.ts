@@ -11,8 +11,8 @@ const recommendAPI = {
   'getRecordByTag': (tag: any): Promise<Response> =>
     API.get(GET_TAG_RECORD, tag),
 
-  'patchCollention': (id: any): Promise<Response> =>
-    API.patch(PATCH_COLLECTION, id),
+  'patchCollention': (rid: any): Promise<Response> =>
+    API.patch(PATCH_COLLECTION, rid),
 };
 
 export default recommendAPI;

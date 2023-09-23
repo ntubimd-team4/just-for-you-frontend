@@ -7,7 +7,9 @@ import Link from 'next/link';
 export default function Navbar() {
   return (
     <nav className={styles.container}>
-      <Image src={Logo} alt="logo" className={styles.logo} height={60} width={60} />
+      <Link href={'/'}>
+        <Image src={Logo} alt="logo" className={styles.logo} height={60} width={60} />
+      </Link>
       <section className={styles.menu}>
         <Link href={'/story'}>
           <FiMessageSquare className={styles.icon} />
