@@ -1,32 +1,35 @@
 import API from './API';
 
+const BASE_URL = '/user-account';
+const USER_LIST_URL = '/user-account/list';
+const USER_ROLE_URL = '/user-account/role';
+const USER_PROFILE_URL = '/user-account/profile';
+const USER_STATUS_URL = '/user-account/status';
+
 const userAPI = {
   'login': (token?: string): Promise<Response> =>
     API.post('/login', undefined, { 'headers': { 'X-Client-Token': token } }),
 
-  'postSummary': (data: any): Promise<Response> =>
-    API.post('/summary_record', data),
-
   'getSingleUser': (id?: string): Promise<Response> =>
-    API.get(`/user-account/${id}`),
-
-  'getAuth': (): Promise<Response> =>
-    API.get('/user-account/role'),
-
-  'getProfile': (): Promise<Response> =>
-    API.get('/user-account/profile'),
+    API.get(`${BASE_URL}/${id}`),
 
   'getList': (data: any): Promise<Response> =>
-    API.get('/user-account/list', { 'params': { ...data } }),
+    API.get(USER_LIST_URL, { 'params': { ...data } }),
 
-  'patchStatus': (id: string): Promise<Response> =>
-    API.patch(`/user-account/status?id=${id}`),
+  'getAuth': (): Promise<Response> =>
+    API.get(USER_ROLE_URL),
+
+  'getProfile': (): Promise<Response> =>
+    API.get(USER_PROFILE_URL),
+
+  'patchProfile': (data: any): Promise<Response> =>
+    API.patch(USER_PROFILE_URL, data),
+
+  'patchStatus': (data: any): Promise<Response> =>
+    API.patch(USER_STATUS_URL, data),
 
   'patchAccount': (data: any): Promise<Response> =>
-    API.patch('/user-account', data),
-
-  'patchProfile': ((data: any): Promise<Response> =>
-    API.patch('/user-account/profile', data)),
+    API.patch(BASE_URL, data),
 };
 
 export default userAPI;
