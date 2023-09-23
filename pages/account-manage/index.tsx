@@ -34,7 +34,7 @@ export default function AccountList() {
 
   async function handleStatue(id: string) {
     try {
-      await userAPI.patchStatus(id);
+      await userAPI.patchStatus({ 'id': id });
       const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
       const data = response.data;
 
