@@ -39,16 +39,16 @@ export default function Story() {
   return (
     <Layout>
       {!isTell ?
-        <>
+        <section className={styles.storyConatiner}>
           <Title />
           <div>
             <Monsters />
-            <section className={styles.textContainer}>
+            <section className={styles.text}>
               <textarea onChange={(e: any) => handleStory(e)} cols={30} rows={2} className={styles.textarea} placeholder="您有甚麼煩惱呢？" />
               <button className={`${styles.sendBtn} ${story !== '' ? styles.available : styles.disable}`} onClick={() => tellStory()}><FiSend /></button>
             </section>
           </div>
-        </> :
+        </section> :
         <section className={styles.responseContainer}>
           <div className={styles.role}>
             <HappyMonster />

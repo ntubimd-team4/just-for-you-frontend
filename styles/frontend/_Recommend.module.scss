@@ -1,0 +1,40 @@
+.container {
+    .pageTitle {
+        font-size: 25px;
+    }
+
+    .timeline {
+        .time {
+            margin: 1rem 0;
+            font-size: 20px;
+        }
+
+        .list {
+            display: flex;
+            margin-bottom: 5rem;
+
+            .content {
+                margin: 0 1rem;
+            }
+
+            .cover {
+                margin-bottom: 1rem;
+
+                img {
+                    border-radius: 10px;
+                }
+            }
+
+            .head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 20px;
+
+                .star {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
