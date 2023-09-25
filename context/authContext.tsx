@@ -1,6 +1,6 @@
 /* eslint-disable quote-props */
 import { createContext, useContext, useEffect, useState } from 'react';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import userAPI from '@/services/userAccountAPI';
 
 export type AuthContextType = {
@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
           setAuthorization(data.description);
         } catch (error: any) {
+          signOut();
           console.log(error.message);
         }
       })();
