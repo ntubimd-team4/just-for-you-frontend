@@ -6,9 +6,9 @@ import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 
 export default function LoginBtn() {
-  async function handleGoogleSignIn() {
+  const handleGoogleSignIn = async () => {
     signIn('google', { 'callbackUrl': 'http://localhost:3000' });
-  }
+  };
 
   return (
     <section className={styles.loginWrap}>

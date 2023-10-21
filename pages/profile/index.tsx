@@ -28,7 +28,7 @@ export default function Profile() {
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    (async () => {
+    const fetchProfileData = async () => {
       try {
         const response = await userAPI.getProfile();
         const data = response.data;
@@ -37,10 +37,12 @@ export default function Profile() {
       } catch (error: any) {
         alert(error.message);
       }
-    })();
+    };
+
+    fetchProfileData();
   }, []);
 
-  async function handleEdit(id: string | undefined) {
+  const handleEdit = async (id: string | undefined) => {
     try {
       const response = await userAPI.getSingleUser(id);
 
@@ -48,7 +50,7 @@ export default function Profile() {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
   return (
     <Layout>

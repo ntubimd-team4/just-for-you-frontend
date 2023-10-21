@@ -10,7 +10,7 @@ export default function AccountList() {
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    (async () => {
+    const fetchData = async () => {
       try {
         const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
         const data = response.data;
@@ -19,10 +19,12 @@ export default function AccountList() {
       } catch (error: any) {
         alert(error.message);
       }
-    })();
+    };
+
+    fetchData();
   }, []);
 
-  async function handleEdit(id: string) {
+  const handleEdit = async (id: string) => {
     try {
       const response = await userAPI.getSingleUser(id);
 
@@ -30,9 +32,9 @@ export default function AccountList() {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
-  async function handleStatue(id: string) {
+  const handleStatue = async (id: string) => {
     try {
       await userAPI.patchStatus({ 'id': id });
       const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
@@ -42,7 +44,7 @@ export default function AccountList() {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
   return (
     <Layout>

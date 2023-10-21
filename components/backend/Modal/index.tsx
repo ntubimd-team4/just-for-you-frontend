@@ -12,7 +12,7 @@ export function EditProfileModal({ data }: { data: AccountListType }) {
   const handleSexChange = (event: any) => setSex(event.target.value);
   const router = useRouter();
 
-  async function patchAccount() {
+  const patchAccount = async () => {
     try {
       await userAPI.patchAccount({
         'userId': data.userId,
@@ -24,7 +24,7 @@ export function EditProfileModal({ data }: { data: AccountListType }) {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
   return (
     <>

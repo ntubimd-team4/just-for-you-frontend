@@ -20,9 +20,9 @@ export default function Navbar() {
   const { 'data': session, status } = useSession();
   const { authorization } = useAuthContext();
 
-  async function handleGoogleLogOut() {
+  const handleGoogleLogOut = async () => {
     signOut({ 'callbackUrl': 'http://localhost:3000' });
-  }
+  };
 
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={10}>
