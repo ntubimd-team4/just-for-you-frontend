@@ -1,7 +1,7 @@
 import API from './API';
 
 const BASE_URL = '/user-account';
-const USER_LIST_URL = '/user-account/list';
+const USER_LIST_URL = '/user-account';
 const USER_ROLE_URL = '/user-account/role';
 const USER_PROFILE_URL = '/user-account/profile';
 const USER_STATUS_URL = '/user-account/status';

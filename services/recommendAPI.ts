@@ -1,7 +1,7 @@
 import API from './API';
 
-const PATCH_COLLECTION = '/music-recommend/collection';
-const GET_ALL_RECORD = '/recommend-record/data';
+const PATCH_COLLECTION = '/collection';
+const GET_ALL_RECORD = '/recommend-record';
 const GET_TAG_RECORD = '/recommend-record/tag';
 
 const recommendAPI = {
