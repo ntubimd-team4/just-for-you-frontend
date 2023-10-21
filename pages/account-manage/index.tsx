@@ -2,7 +2,7 @@ import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch } from '@chakra-ui/react';
-import { InitialFocus } from '@/components/backend/Modal';
+import { EditProfileModal } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
 
 export default function AccountList() {
@@ -46,6 +46,7 @@ export default function AccountList() {
 
   return (
     <Layout>
+      <h1>帳號管理</h1>
       <TableContainer>
         <Table variant="simple">
           <Thead>
@@ -68,7 +69,7 @@ export default function AccountList() {
                 <Td>{data.userSex !== null ? data.userSex : '待填寫'}</Td>
                 <Td>{data.role}</Td>
                 <Td onClick={() => handleEdit(data.userId)}>
-                  <InitialFocus data={singleData} />
+                  <EditProfileModal data={singleData} />
                 </Td>
                 <Td onClick={() => handleStatue(data.userId)}><Switch id="status" isChecked={data.available} /></Td>
               </Tr>

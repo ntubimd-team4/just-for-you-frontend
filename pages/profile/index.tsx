@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
-import { InitialFocus } from '@/components/backend/Modal';
+import { EditProfileModal } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
 
 export type AccountType = {
@@ -99,7 +99,7 @@ export default function Profile() {
 
           <Stack mt={8} direction={'row'} spacing={4}
             onClick={() => handleEdit(profileData?.userId)}>
-            <InitialFocus data={singleData} />
+            <EditProfileModal data={singleData} />
           </Stack>
         </Box>
       </Center>

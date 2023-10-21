@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import Layout from '@/components/frontend/Layout';
 import LoginBtn from '@/components/backend/LoginBtn';
 
 export default function Login() {
