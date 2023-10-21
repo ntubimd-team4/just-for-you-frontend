@@ -4,7 +4,7 @@ import { ChangeEvent, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
 import { useRouter } from 'next/router';
 
-export function InitialFocus({ data }: { data: AccountListType }) {
+export function EditProfileModal({ data }: { data: AccountListType }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [department, setDepartment] = useState(data?.department);
   const [sex, setSex] = useState(data?.userSex);
@@ -12,7 +12,7 @@ export function InitialFocus({ data }: { data: AccountListType }) {
   const handleSexChange = (event: any) => setSex(event.target.value);
   const router = useRouter();
 
-  async function patchAccount() {
+  const patchAccount = async () => {
     try {
       await userAPI.patchAccount({
         'userId': data.userId,
@@ -24,14 +24,16 @@ export function InitialFocus({ data }: { data: AccountListType }) {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
   return (
     <>
       <Button flex={1}
         fontSize={'sm'}
         rounded={'full'}
-        _focus={{ 'bg': 'gray.200', }} onClick={onOpen} aria-label="修改資料">編輯資料</Button>
+        _focus={{ 'bg': 'gray.200', }} onClick={onOpen} aria-label="編輯資料">
+          編輯資料
+      </Button>
       <Modal
         isOpen={isOpen}
         onClose={onClose}

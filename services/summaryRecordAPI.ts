@@ -5,9 +5,9 @@ const DETAIL_URL = '/summary-record';
 
 const summaryAPI = {
   'getSummary': (userId: any): Promise<Response> =>
-    API.get(BASE_URL, userId),
+    API.get(`${BASE_URL}?userId=${userId}`),
 
-  'getSummaryDetail': (sid: any): Promise<Response> =>
+  'getSummaryDetail': (sid : any): Promise<Response> =>
     API.get(`${DETAIL_URL}/${sid}`),
 
   'postSummary': (data: any): Promise<Response> =>

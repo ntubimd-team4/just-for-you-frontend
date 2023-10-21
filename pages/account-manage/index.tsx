@@ -2,7 +2,7 @@ import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch } from '@chakra-ui/react';
-import { InitialFocus } from '@/components/backend/Modal';
+import { EditProfileModal } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
 
 export default function AccountList() {
@@ -10,7 +10,7 @@ export default function AccountList() {
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    (async () => {
+    const fetchData = async () => {
       try {
         const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
         const data = response.data;
@@ -19,10 +19,12 @@ export default function AccountList() {
       } catch (error: any) {
         alert(error.message);
       }
-    })();
+    };
+
+    fetchData();
   }, []);
 
-  async function handleEdit(id: string) {
+  const handleEdit = async (id: string) => {
     try {
       const response = await userAPI.getSingleUser(id);
 
@@ -30,9 +32,9 @@ export default function AccountList() {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
-  async function handleStatue(id: string) {
+  const handleStatue = async (id: string) => {
     try {
       await userAPI.patchStatus({ 'id': id });
       const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
@@ -42,10 +44,11 @@ export default function AccountList() {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
   return (
     <Layout>
+      <h1>帳號管理</h1>
       <TableContainer>
         <Table variant="simple">
           <Thead>
@@ -68,7 +71,7 @@ export default function AccountList() {
                 <Td>{data.userSex !== null ? data.userSex : '待填寫'}</Td>
                 <Td>{data.role}</Td>
                 <Td onClick={() => handleEdit(data.userId)}>
-                  <InitialFocus data={singleData} />
+                  <EditProfileModal data={singleData} />
                 </Td>
                 <Td onClick={() => handleStatue(data.userId)}><Switch id="status" isChecked={data.available} /></Td>
               </Tr>
