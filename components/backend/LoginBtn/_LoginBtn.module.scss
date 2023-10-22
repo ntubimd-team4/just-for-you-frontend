@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  color: #644132;
+  margin-top: 8rem;
 
   h1 {
     font-size: 60px;
@@ -20,9 +21,13 @@
 .btn {
   display: flex;
   align-items: center;
-  border: 1px solid #bcbcbc;
+  justify-content: center;
+  filter: drop-shadow(4px 7px 0px #e3e3e3);
   padding: 1rem;
   border-radius: 50px;
+  margin: 5rem;
+  background-color: #fff;
+  width: 500px;
 
   img {
     margin-right: 1rem;

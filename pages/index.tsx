@@ -2,8 +2,7 @@ import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useAuthContext } from '@/context/authContext';
 import { useRouter } from 'next/router';
-import Layout from '@/components/backend/Layout';
-import LoginBtn from '@/components/backend/LoginBtn';
+import Loading from '@/components/frontend/Loading';
 
 export default function Home() {
   const { 'data': session, status } = useSession();
@@ -25,7 +24,6 @@ export default function Home() {
   }, [authorization, route, status]);
 
   return (
-    <Layout>
-    </Layout>
+    <Loading hint={'載入中'} />
   );
 }

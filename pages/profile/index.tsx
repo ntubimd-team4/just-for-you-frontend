@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
-import { InitialFocus } from '@/components/backend/Modal';
+import { EditProfileModal } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
 
 export type AccountType = {
@@ -28,7 +28,7 @@ export default function Profile() {
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    (async () => {
+    const fetchProfileData = async () => {
       try {
         const response = await userAPI.getProfile();
         const data = response.data;
@@ -37,10 +37,12 @@ export default function Profile() {
       } catch (error: any) {
         alert(error.message);
       }
-    })();
+    };
+
+    fetchProfileData();
   }, []);
 
-  async function handleEdit(id: string | undefined) {
+  const handleEdit = async (id: string | undefined) => {
     try {
       const response = await userAPI.getSingleUser(id);
 
@@ -48,7 +50,7 @@ export default function Profile() {
     } catch (err: any) {
       alert(err.message);
     }
-  }
+  };
 
   return (
     <Layout>
@@ -99,7 +101,7 @@ export default function Profile() {
 
           <Stack mt={8} direction={'row'} spacing={4}
             onClick={() => handleEdit(profileData?.userId)}>
-            <InitialFocus data={singleData} />
+            <EditProfileModal data={singleData} />
           </Stack>
         </Box>
       </Center>
