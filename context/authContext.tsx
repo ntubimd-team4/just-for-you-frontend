@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (status === 'authenticated') {
-      (async () => {
+      const login = async () => {
         try {
           await userAPI.login(session?.id_token);
           const response = await userAPI.getAuth();
@@ -26,7 +26,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           signOut();
           console.log(error.message);
         }
-      })();
+      };
+
+      login();
     }
   }, [session?.id_token, status]);
 

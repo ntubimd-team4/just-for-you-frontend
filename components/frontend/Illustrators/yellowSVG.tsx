@@ -1,37 +1,38 @@
 export function HappyMonster() {
   return (
-    <svg width="257" height="295" viewBox="0 0 257 295" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g filter="url(#filter0_b_9_87)">
-        <path d="M57.9897 281.281C57.8872 273.898 63.7888 267.83 71.1713 267.728L98.7916 267.344L99.0001 282.368C99.0899 288.836 93.9196 294.152 87.452 294.241L71.5425 294.462C64.16 294.565 58.0922 288.663 57.9897 281.281Z" fill="#FF64F9" />
+    <svg width="477" height="407" viewBox="0 0 477 407" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_b_114_84)">
+        <path d="M131.292 387.123C131.133 376.173 139.881 367.179 150.831 367.034L194.241 366.459L194.555 388.044C194.701 398.023 186.729 406.219 176.75 406.351L151.408 406.687C140.458 406.832 131.452 398.073 131.292 387.123Z" fill="#FC8131" />
       </g>
-      <path d="M77.5101 294.276V202.972H99.1867V274.276C99.1867 285.322 90.2324 294.276 79.1867 294.276H77.5101Z" fill="#FF64F9" />
-      <path d="M0 177.025C0 162.696 11.6165 151.079 25.9462 151.079H57.1964C71.526 151.079 83.1426 162.696 83.1426 177.025C83.1426 191.355 71.5261 202.972 57.1964 202.972H25.9462C11.6165 202.972 0 191.355 0 177.025Z" fill="#FF64F9" />
-      <path d="M173.413 177.025C173.413 162.696 185.029 151.079 199.359 151.079H230.609C244.939 151.079 256.555 162.696 256.555 177.025C256.555 191.355 244.939 202.972 230.609 202.972H199.359C185.029 202.972 173.413 191.355 173.413 177.025Z" fill="#FF64F9" />
-      <g filter="url(#filter1_b_9_87)">
-        <path d="M156.991 267.257L184.611 266.873C191.994 266.771 198.062 272.672 198.164 280.055C198.266 287.437 192.365 293.505 184.982 293.608L169.073 293.828C162.605 293.918 157.289 288.748 157.2 282.28L156.991 267.257Z" fill="#FF64F9" />
+      <path d="M161.407 406.398V270.974H194.851V386.398C194.851 397.443 185.896 406.398 174.851 406.398H161.407Z" fill="#FC8131" />
+      <g filter="url(#filter1_b_114_84)">
+        <path d="M284.034 366.322L327.444 365.747C338.394 365.602 347.4 374.361 347.56 385.311C347.719 396.261 338.971 405.255 328.021 405.4L302.679 405.736C292.7 405.868 284.493 397.886 284.348 387.907L284.034 366.322Z" fill="#FC8131" />
       </g>
-      <path d="M176.991 293.619C165.945 293.619 156.991 284.665 156.991 273.619V202.315H178.668V293.619H176.991Z" fill="#FF64F9" />
-      <path d="M225.962 107.147C225.962 237.129 225.962 237.129 130.22 237.129C34.4783 237.129 32.0842 237.129 30.7944 188.298C30.2158 166.391 30.2158 139.69 30.2158 107.147C30.2158 47.9714 74.9893 0 130.22 0C185.451 0 225.962 47.9714 225.962 107.147Z" fill="#FFE600" />
-      <circle cx="104.77" cy="93.6034" r="16.7501" fill="white" />
-      <circle cx="105.099" cy="93.9318" r="9.85299" fill="#242424" />
-      <circle cx="152.721" cy="93.6034" r="16.7501" fill="white" />
-      <circle cx="153.05" cy="93.9318" r="9.85299" fill="#242424" />
-      <path d="M83.422 135.971C83.422 135.971 83.7505 167.172 126.118 167.172C161.918 167.172 164.873 135.971 164.873 135.971" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+      <path d="M304.034 405.423C292.988 405.423 284.034 396.469 284.034 385.423V270H317.477V405.423H304.034Z" fill="#FC8131" />
+      <path d="M11.152 270.675C4.99293 260.734 8.05904 247.682 18.0004 241.523L104.139 188.156C114.08 181.997 127.132 185.063 133.291 195.005C139.45 204.946 136.384 217.998 126.443 224.157L40.3044 277.524C30.363 283.683 17.3111 280.617 11.152 270.675Z" fill="#FC8131" />
+      <path d="M343.152 184.005C349.311 174.063 362.363 170.997 372.304 177.156L458.443 230.523C468.384 236.682 471.45 249.734 465.291 259.675C459.132 269.616 446.08 272.683 436.139 266.524L350 213.157C340.059 206.998 336.993 193.946 343.152 184.005Z" fill="#FC8131" />
+      <path d="M402.957 139.312C402.957 364.951 410.185 375 240.593 375C101.448 375 76.4673 375 71.9827 244.823C71.0015 216.34 71.0015 181.624 71.0015 139.312C71.0015 62.372 146.93 0 240.593 0C334.256 0 402.957 62.372 402.957 139.312Z" fill="#4D7AED" />
+      <ellipse cx="199.844" cy="147.71" rx="25.8428" ry="24.1196" fill="white" />
+      <ellipse cx="200.351" cy="148.183" rx="15.2017" ry="14.188" fill="#242424" />
+      <ellipse cx="273.826" cy="147.71" rx="25.8428" ry="24.1196" fill="white" />
+      <ellipse cx="274.332" cy="148.183" rx="15.2017" ry="14.188" fill="#242424" />
+      <path d="M299.669 243.243C299.669 243.243 299.162 198.314 233.795 198.314C178.562 198.314 174.002 243.243 174.002 243.243" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+      <path d="M152.002 97.6078C152.002 97.6078 154.299 101.765 179.002 91.0676C200.832 81.6144 200.247 78.4131 200.247 78.4131" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+      <path d="M274.528 79.0277C274.528 79.0277 269.106 80.4568 295.038 90.7027C316.949 99.36 324.381 98.7251 324.381 98.7251" stroke="#242424" stroke-width="10" stroke-linecap="round" />
       <defs>
-        <filter id="filter0_b_9_87" x="-22.0116" y="187.344" width="201.013" height="187.119" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter0_b_114_84" x="51.2902" y="286.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
-          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_9_87" />
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_9_87" result="shape" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_84" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_84" result="shape" />
         </filter>
-        <filter id="filter1_b_9_87" x="76.991" y="186.872" width="201.174" height="186.958" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter1_b_114_84" x="204.034" y="285.746" width="223.528" height="199.992" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
-          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_9_87" />
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_9_87" result="shape" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_84" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_84" result="shape" />
         </filter>
       </defs>
     </svg>
-
   );
 }

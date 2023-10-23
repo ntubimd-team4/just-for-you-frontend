@@ -2,12 +2,7 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import { Box } from '@chakra-ui/react';
 
-const style = {
-  'minHeight': '80vh',
-  'display': 'flex',
-  'justifyContent': 'center',
-  'alignItems': 'center'
-};
+const style = { 'minHeight': '80vh', };
 
 export default function Layout({ children }: {
   children: React.ReactNode
