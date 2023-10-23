@@ -14,16 +14,16 @@
   <ellipse cx="191.034" cy="153.443" rx="15.0197" ry="14.6788" fill="#242424"/>
   <ellipse cx="263.63" cy="152.954" rx="25.5336" ry="24.954" fill="white"/>
   <ellipse cx="264.13" cy="153.443" rx="15.0197" ry="14.6788" fill="#242424"/>
-  <circle cx="230.126" cy="234.369" r="19.5" stroke="#242424" stroke-width="10"/>
+  <circle cx="230.126" cy="234.369" r="19.5" stroke="#242424" strokeWidth="10"/>
   <defs>
-    <filter id="filter0_b_3_49" x="40.709" y="330.122" width="222.907" height="206.525" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter0_b_3_49" x="40.709" y="330.122" width="222.907" height="206.525" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_3_49"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_3_49" result="shape"/>
     </filter>
-    <filter id="filter1_b_3_49" x="192.499" y="329.348" width="223.128" height="206.248" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter1_b_3_49" x="192.499" y="329.348" width="223.128" height="206.248" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_3_49"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_3_49" result="shape"/>

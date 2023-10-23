@@ -14,18 +14,18 @@
   <ellipse cx="230.35" cy="344.13" rx="15.2017" ry="14.188" fill="#242424"/>
   <ellipse cx="303.824" cy="343.657" rx="25.8428" ry="24.1196" fill="white"/>
   <ellipse cx="304.331" cy="344.13" rx="15.2017" ry="14.188" fill="#242424"/>
-  <path d="M329.667 439.189C329.667 439.189 329.16 394.261 263.793 394.261C208.561 394.261 204 439.189 204 439.189" stroke="#242424" stroke-width="10" stroke-linecap="round"/>
-  <path d="M182 293.554C182 293.554 184.298 297.711 209 287.014C230.83 277.561 230.246 274.36 230.246 274.36" stroke="#242424" stroke-width="10" stroke-linecap="round"/>
-  <path d="M304.527 274.974C304.527 274.974 299.105 276.403 325.037 286.649C346.948 295.307 354.38 294.672 354.38 294.672" stroke="#242424" stroke-width="10" stroke-linecap="round"/>
+  <path d="M329.667 439.189C329.667 439.189 329.16 394.261 263.793 394.261C208.561 394.261 204 439.189 204 439.189" stroke="#242424" strokeWidth="10" strokeLinecap="round"/>
+  <path d="M182 293.554C182 293.554 184.298 297.711 209 287.014C230.83 277.561 230.246 274.36 230.246 274.36" stroke="#242424" strokeWidth="10" strokeLinecap="round"/>
+  <path d="M304.527 274.974C304.527 274.974 299.105 276.403 325.037 286.649C346.948 295.307 354.38 294.672 354.38 294.672" stroke="#242424" strokeWidth="10" strokeLinecap="round"/>
   <defs>
-    <filter id="filter0_b_82_8" x="81.2891" y="456.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter0_b_82_8" x="81.2891" y="456.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_82_8"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_82_8" result="shape"/>
     </filter>
-    <filter id="filter1_b_82_8" x="234.033" y="455.745" width="223.528" height="199.992" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter1_b_82_8" x="234.033" y="455.745" width="223.528" height="199.992" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_82_8"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_82_8" result="shape"/>

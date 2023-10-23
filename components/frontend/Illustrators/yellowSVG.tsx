@@ -16,18 +16,18 @@ export function HappyMonster() {
       <ellipse cx="200.351" cy="148.183" rx="15.2017" ry="14.188" fill="#242424" />
       <ellipse cx="273.826" cy="147.71" rx="25.8428" ry="24.1196" fill="white" />
       <ellipse cx="274.332" cy="148.183" rx="15.2017" ry="14.188" fill="#242424" />
-      <path d="M299.669 243.243C299.669 243.243 299.162 198.314 233.795 198.314C178.562 198.314 174.002 243.243 174.002 243.243" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-      <path d="M152.002 97.6078C152.002 97.6078 154.299 101.765 179.002 91.0676C200.832 81.6144 200.247 78.4131 200.247 78.4131" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-      <path d="M274.528 79.0277C274.528 79.0277 269.106 80.4568 295.038 90.7027C316.949 99.36 324.381 98.7251 324.381 98.7251" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+      <path d="M299.669 243.243C299.669 243.243 299.162 198.314 233.795 198.314C178.562 198.314 174.002 243.243 174.002 243.243" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+      <path d="M152.002 97.6078C152.002 97.6078 154.299 101.765 179.002 91.0676C200.832 81.6144 200.247 78.4131 200.247 78.4131" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+      <path d="M274.528 79.0277C274.528 79.0277 269.106 80.4568 295.038 90.7027C316.949 99.36 324.381 98.7251 324.381 98.7251" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
       <defs>
-        <filter id="filter0_b_114_84" x="51.2902" y="286.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <filter id="filter0_b_114_84" x="51.2902" y="286.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
           <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_84" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_84" result="shape" />
         </filter>
-        <filter id="filter1_b_114_84" x="204.034" y="285.746" width="223.528" height="199.992" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <filter id="filter1_b_114_84" x="204.034" y="285.746" width="223.528" height="199.992" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
           <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_84" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_84" result="shape" />
