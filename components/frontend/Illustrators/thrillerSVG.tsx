@@ -14,16 +14,16 @@
   <ellipse cx="250" cy="256.203" rx="15" ry="13.1952" fill="#242424"/>
   <ellipse cx="322.5" cy="255.763" rx="25.5" ry="22.4319" fill="white"/>
   <ellipse cx="323" cy="256.203" rx="15" ry="13.1952" fill="#242424"/>
-  <path d="M224 332.735L238.091 321.3L250.169 332.735L269.091 321.3L282.377 332.735L299.286 321.3L316.195 332.735L332.299 321.3L348 332.735" stroke="#242424" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M224 332.735L238.091 321.3L250.169 332.735L269.091 321.3L282.377 332.735L299.286 321.3L316.195 332.735L332.299 321.3L348 332.735" stroke="#242424" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/>
   <defs>
-    <filter id="filter0_b_82_10" x="98.0798" y="462.435" width="222.404" height="196.348" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter0_b_82_10" x="98.0798" y="462.435" width="222.404" height="196.348" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_82_10"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_82_10" result="shape"/>
     </filter>
-    <filter id="filter1_b_82_10" x="248.8" y="461.772" width="222.683" height="196.131" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter1_b_82_10" x="248.8" y="461.772" width="222.683" height="196.131" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_82_10"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_82_10" result="shape"/>

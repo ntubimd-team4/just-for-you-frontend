@@ -14,16 +14,16 @@
   <ellipse cx="203.34" cy="159.174" rx="15" ry="15.3072" fill="#242424"/>
   <ellipse cx="275.84" cy="158.663" rx="25.5" ry="26.0223" fill="white"/>
   <ellipse cx="276.34" cy="159.174" rx="15" ry="15.3072" fill="#242424"/>
-  <path d="M285.996 237.499C285.996 238.248 285.609 239.56 283.593 241.348C281.582 243.131 278.387 244.964 274.01 246.606C265.293 249.875 252.915 251.999 238.996 251.999C225.078 251.999 212.699 249.875 203.982 246.606C199.605 244.964 196.41 243.131 194.4 241.348C192.383 239.56 191.996 238.248 191.996 237.499C191.996 236.75 192.383 235.438 194.4 233.65C196.41 231.867 199.605 230.033 203.982 228.392C212.699 225.123 225.078 222.999 238.996 222.999C252.915 222.999 265.293 225.123 274.01 228.392C278.387 230.033 281.582 231.867 283.593 233.65C285.609 235.438 285.996 236.75 285.996 237.499Z" stroke="#242424" stroke-width="10"/>
+  <path d="M285.996 237.499C285.996 238.248 285.609 239.56 283.593 241.348C281.582 243.131 278.387 244.964 274.01 246.606C265.293 249.875 252.915 251.999 238.996 251.999C225.078 251.999 212.699 249.875 203.982 246.606C199.605 244.964 196.41 243.131 194.4 241.348C192.383 239.56 191.996 238.248 191.996 237.499C191.996 236.75 192.383 235.438 194.4 233.65C196.41 231.867 199.605 230.033 203.982 228.392C212.699 225.123 225.078 222.999 238.996 222.999C252.915 222.999 265.293 225.123 274.01 228.392C278.387 230.033 281.582 231.867 283.593 233.65C285.609 235.438 285.996 236.75 285.996 237.499Z" stroke="#242424" strokeWidth="10"/>
   <defs>
-    <filter id="filter0_b_47_55" x="51.6219" y="348.575" width="222.442" height="202.125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter0_b_47_55" x="51.6219" y="348.575" width="222.442" height="202.125" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_47_55"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_47_55" result="shape"/>
     </filter>
-    <filter id="filter1_b_47_55" x="202.329" y="347.847" width="222.683" height="201.875" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter1_b_47_55" x="202.329" y="347.847" width="222.683" height="201.875" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_47_55"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_47_55" result="shape"/>

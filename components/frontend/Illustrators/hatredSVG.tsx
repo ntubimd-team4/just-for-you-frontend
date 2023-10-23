@@ -14,16 +14,16 @@
   <circle cx="222.31" cy="235.071" r="15" fill="#242424"/>
   <circle cx="294.81" cy="234.571" r="25.5" fill="white"/>
   <circle cx="295.31" cy="235.071" r="15" fill="#242424"/>
-  <path d="M319.495 339.063C319.495 339.063 295.995 284.571 248.495 311.571C200.995 338.571 199.995 339.063 199.995 339.063" stroke="#242424" stroke-width="10" stroke-linecap="round"/>
+  <path d="M319.495 339.063C319.495 339.063 295.995 284.571 248.495 311.571C200.995 338.571 199.995 339.063 199.995 339.063" stroke="#242424" strokeWidth="10" strokeLinecap="round"/>
   <defs>
-    <filter id="filter0_b_82_7" x="70.5938" y="456.997" width="222.437" height="201.286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter0_b_82_7" x="70.5938" y="456.997" width="222.437" height="201.286" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_82_7"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_82_7" result="shape"/>
     </filter>
-    <filter id="filter1_b_82_7" x="221.317" y="456.277" width="222.683" height="201.04" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <filter id="filter1_b_82_7" x="221.317" y="456.277" width="222.683" height="201.04" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
       <feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
       <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_82_7"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_82_7" result="shape"/>
