@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 
 export default function Navbar() {
-  const { 'data': session, status } = useSession();
+  const { status } = useSession();
 
   return (
     <nav className={styles.container}>

@@ -13,6 +13,8 @@ import { useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
 import { EditProfileModal } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 export type AccountType = {
   userName: string,
@@ -24,23 +26,29 @@ export type AccountType = {
 }
 
 export default function Profile() {
+  const router = useRouter();
+  const { status } = useSession();
   const [profileData, setProfileData] = useState<AccountType>();
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const response = await userAPI.getProfile();
-        const data = response.data;
+    if (status === 'authenticated') {
+      router.push('/');
+    } else {
+      const fetchProfileData = async () => {
+        try {
+          const response = await userAPI.getProfile();
+          const data = response.data;
 
-        setProfileData(data);
-      } catch (error: any) {
-        alert(error.message);
-      }
-    };
+          setProfileData(data);
+        } catch (error: any) {
+          alert(error.message);
+        }
+      };
 
-    fetchProfileData();
-  }, []);
+      fetchProfileData();
+    }
+  }, [router, status]);
 
   const handleEdit = async (id: string | undefined) => {
     try {
