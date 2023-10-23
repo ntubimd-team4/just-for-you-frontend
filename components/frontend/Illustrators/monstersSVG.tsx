@@ -23,7 +23,7 @@ export function Monsters() {
         <ellipse cx="629.344" cy="227.178" rx="15" ry="15.3072" fill="#242424" />
         <ellipse cx="701.844" cy="226.668" rx="25.5" ry="26.0223" fill="white" />
         <ellipse cx="702.344" cy="227.178" rx="15" ry="15.3072" fill="#242424" />
-        <path d="M712 305.503C712 306.252 711.613 307.564 709.597 309.352C707.586 311.135 704.391 312.969 700.014 314.61C691.297 317.879 678.919 320.003 665 320.003C651.082 320.003 638.703 317.879 629.986 314.61C625.609 312.969 622.414 311.135 620.404 309.352C618.387 307.564 618 306.252 618 305.503C618 304.754 618.387 303.442 620.404 301.654C622.414 299.871 625.609 298.038 629.986 296.396C638.703 293.127 651.082 291.003 665 291.003C678.919 291.003 691.297 293.127 700.014 296.396C704.391 298.038 707.586 299.871 709.597 301.654C711.613 303.442 712 304.754 712 305.503Z" stroke="#242424" stroke-width="10" />
+        <path d="M712 305.503C712 306.252 711.613 307.564 709.597 309.352C707.586 311.135 704.391 312.969 700.014 314.61C691.297 317.879 678.919 320.003 665 320.003C651.082 320.003 638.703 317.879 629.986 314.61C625.609 312.969 622.414 311.135 620.404 309.352C618.387 307.564 618 306.252 618 305.503C618 304.754 618.387 303.442 620.404 301.654C622.414 299.871 625.609 298.038 629.986 296.396C638.703 293.127 651.082 291.003 665 291.003C678.919 291.003 691.297 293.127 700.014 296.396C704.391 298.038 707.586 299.871 709.597 301.654C711.613 303.442 712 304.754 712 305.503Z" stroke="#242424" strokeWidth="10" />
         <g filter="url(#filter2_b_114_194)">
           <path d="M1019.28 514.215C1019.12 502.976 1028.11 493.739 1039.35 493.583L1081.39 492.999L1081.71 515.871C1081.85 525.717 1073.98 533.81 1064.13 533.946L1039.91 534.282C1028.67 534.438 1019.43 525.454 1019.28 514.215V514.215Z" fill="#9F64FF" />
         </g>
@@ -39,9 +39,9 @@ export function Monsters() {
         <circle cx="1092" cy="231" r="15" fill="#242424" />
         <circle cx="1164.5" cy="230.5" r="25.5" fill="white" />
         <circle cx="1165" cy="231" r="15" fill="#242424" />
-        <path d="M1066 317C1066 317 1068.5 317 1133 317C1187.5 317 1190 317 1190 317" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-        <path d="M1061 176C1061 176 1061.87 176.302 1084.24 184.105C1103.13 190.698 1104 191 1104 191" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-        <path d="M1154 191C1154 191 1154.81 190.718 1175.61 183.435C1193.2 177.282 1194 177 1194 177" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+        <path d="M1066 317C1066 317 1068.5 317 1133 317C1187.5 317 1190 317 1190 317" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+        <path d="M1061 176C1061 176 1061.87 176.302 1084.24 184.105C1103.13 190.698 1104 191 1104 191" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+        <path d="M1154 191C1154 191 1154.81 190.718 1175.61 183.435C1193.2 177.282 1194 177 1194 177" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
         <g filter="url(#filter4_b_114_194)">
           <path d="M1469.6 514.213C1469.44 502.974 1478.43 493.737 1489.66 493.581L1531.71 492.997L1532.03 515.869C1532.17 525.715 1524.3 533.808 1514.45 533.944L1490.23 534.281C1478.99 534.437 1469.75 525.452 1469.6 514.213V514.213Z" fill="#26DD81" />
         </g>
@@ -57,7 +57,7 @@ export function Monsters() {
         <circle cx="1541.31" cy="205.004" r="15" fill="#242424" />
         <circle cx="1613.81" cy="204.504" r="25.5" fill="white" />
         <circle cx="1614.31" cy="205.004" r="15" fill="#242424" />
-        <path d="M1638.5 308.996C1638.5 308.996 1615 254.504 1567.5 281.504C1520 308.504 1519 308.996 1519 308.996" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+        <path d="M1638.5 308.996C1638.5 308.996 1615 254.504 1567.5 281.504C1520 308.504 1519 308.996 1519 308.996" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
         <g filter="url(#filter6_b_114_194)">
           <path d="M1910.29 524.123C1910.13 513.173 1918.88 504.179 1929.83 504.034L1973.24 503.459L1973.56 525.044C1973.7 535.023 1965.73 543.219 1955.75 543.351L1930.41 543.687C1919.46 543.832 1910.45 535.073 1910.29 524.123V524.123Z" fill="#FC8131" />
         </g>
@@ -73,9 +73,9 @@ export function Monsters() {
         <ellipse cx="1979.35" cy="285.183" rx="15.2017" ry="14.188" fill="#242424" />
         <ellipse cx="2052.83" cy="284.71" rx="25.8428" ry="24.1196" fill="white" />
         <ellipse cx="2053.33" cy="285.183" rx="15.2017" ry="14.188" fill="#242424" />
-        <path d="M2078.67 380.243C2078.67 380.243 2078.16 335.314 2012.79 335.314C1957.56 335.314 1953 380.243 1953 380.243" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-        <path d="M1931 234.608C1931 234.608 1933.3 238.765 1958 228.068C1979.83 218.614 1979.25 215.413 1979.25 215.413" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-        <path d="M2053.53 216.028C2053.53 216.028 2048.11 217.457 2074.04 227.703C2095.95 236.36 2103.38 235.725 2103.38 235.725" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+        <path d="M2078.67 380.243C2078.67 380.243 2078.16 335.314 2012.79 335.314C1957.56 335.314 1953 380.243 1953 380.243" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+        <path d="M1931 234.608C1931 234.608 1933.3 238.765 1958 228.068C1979.83 218.614 1979.25 215.413 1979.25 215.413" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+        <path d="M2053.53 216.028C2053.53 216.028 2048.11 217.457 2074.04 227.703C2095.95 236.36 2103.38 235.725 2103.38 235.725" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
         <g filter="url(#filter8_b_114_194)">
           <path d="M123.206 514.838C123.05 503.463 132.144 494.113 143.518 493.953L185.322 493.366L185.642 516.728C185.777 526.574 177.905 534.669 168.059 534.807L144.083 535.144C132.709 535.303 123.362 526.212 123.206 514.838V514.838Z" fill="#4D7AED" />
         </g>
@@ -87,7 +87,7 @@ export function Monsters() {
         <path d="M12.2472 332.071C6.03384 322.042 9.12696 308.875 19.1558 302.662L105.384 249.24C115.413 243.027 128.58 246.12 134.793 256.149V256.149C141.006 266.178 137.913 279.345 127.884 285.558L41.6563 338.98C31.6274 345.193 18.4605 342.1 12.2472 332.071V332.071Z" fill="#4D7AED" />
         <path d="M299.178 245.557C305.402 235.511 318.591 232.413 328.637 238.637L414.582 291.883C424.628 298.107 427.727 311.297 421.503 321.343V321.343C415.278 331.389 402.089 334.487 392.043 328.263L306.098 275.017C296.052 268.793 292.954 255.603 299.178 245.557V245.557Z" fill="#4D7AED" />
         <path d="M344.92 179.85C344.92 397.868 344.92 397.868 220.196 397.868C95.4728 397.868 92.354 397.868 90.6738 315.964C89.92 279.219 89.92 234.434 89.92 179.85C89.92 80.5946 148.247 0.132385 220.196 0.132385C292.146 0.132385 344.92 80.5946 344.92 179.85Z" fill="#FFD430" />
-        <path d="M153.924 252.177C153.924 252.177 154.424 301.823 218.924 301.823C273.424 301.823 277.924 252.177 277.924 252.177" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+        <path d="M153.924 252.177C153.924 252.177 154.424 301.823 218.924 301.823C273.424 301.823 277.924 252.177 277.924 252.177" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
         <ellipse cx="181.536" cy="199.889" rx="25.5" ry="26.6518" fill="white" />
         <ellipse cx="182.036" cy="200.412" rx="15" ry="15.6776" fill="#242424" />
         <ellipse cx="254.536" cy="199.889" rx="25.5" ry="26.6518" fill="white" />
@@ -103,7 +103,7 @@ export function Monsters() {
         <path d="M2261.47 386.336C2255.36 376.471 2258.4 363.519 2268.27 357.407L2355.63 303.283C2365.49 297.171 2378.44 300.214 2384.55 310.079V310.079C2390.67 319.944 2387.62 332.896 2377.76 339.007L2290.4 393.131C2280.53 399.243 2267.58 396.201 2261.47 386.336V386.336Z" fill="#FF675D" />
         <path d="M2568.56 309.142C2574.42 299.671 2586.86 296.75 2596.33 302.618L2682.53 356.025C2692.53 362.218 2695.61 375.343 2689.42 385.34V385.34C2683.23 395.337 2670.1 398.42 2660.1 392.227L2575.81 340C2565.28 333.481 2562.04 319.665 2568.56 309.142V309.142Z" fill="#FF675D" />
         <path d="M2608.87 235.507C2608.87 479.279 2615.08 490.135 2469.31 490.135C2349.7 490.135 2328.23 490.135 2324.38 349.497C2323.53 318.725 2323.53 281.219 2323.53 235.507C2323.53 152.384 2388.8 85 2469.31 85C2549.82 85 2608.87 152.384 2608.87 235.507Z" fill="#45AAF2" />
-        <circle cx="2473.18" cy="319.362" r="19.5" stroke="#242424" stroke-width="10" />
+        <circle cx="2473.18" cy="319.362" r="19.5" stroke="#242424" strokeWidth="10" />
         <ellipse cx="2433.58" cy="237.947" rx="25.5336" ry="24.954" fill="white" />
         <ellipse cx="2434.08" cy="238.436" rx="15.0197" ry="14.6788" fill="#242424" />
         <ellipse cx="2506.68" cy="237.947" rx="25.5336" ry="24.954" fill="white" />
@@ -123,7 +123,7 @@ export function Monsters() {
         <ellipse cx="2885" cy="228.87" rx="15" ry="13.1952" fill="#242424" />
         <ellipse cx="2957.5" cy="228.43" rx="25.5" ry="22.4319" fill="white" />
         <ellipse cx="2958" cy="228.87" rx="15" ry="13.1952" fill="#242424" />
-        <path d="M2859 305.402L2873.09 293.966L2885.17 305.402L2904.09 293.966L2917.37 305.402L2934.28 293.966L2951.19 305.402L2967.3 293.966L2983 305.402" stroke="#242424" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2859 305.402L2873.09 293.966L2885.17 305.402L2904.09 293.966L2917.37 305.402L2934.28 293.966L2951.19 305.402L2967.3 293.966L2983 305.402" stroke="#242424" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
         <g filter="url(#filter14_b_114_194)">
           <path d="M3240.4 512.216C3240.24 500.977 3249.23 491.74 3260.47 491.584L3302.51 491L3302.83 513.872C3302.97 523.718 3295.1 531.811 3285.25 531.947L3261.03 532.284C3249.79 532.44 3240.55 523.455 3240.4 512.216V512.216Z" fill="#4D7AED" />
         </g>
@@ -139,102 +139,102 @@ export function Monsters() {
         <circle cx="3320.32" cy="255" r="15" fill="#242424" />
         <circle cx="3392.82" cy="254.5" r="25.5" fill="white" />
         <circle cx="3393.32" cy="255" r="15" fill="#242424" />
-        <path d="M3320 311C3320 311 3320.3 371 3358.27 371C3390.35 371 3393 311 3393 311" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-        <path d="M3385 201.985C3385 201.985 3401.17 181.843 3427 190.854C3448.83 198.468 3434.66 219.309 3434.66 219.309" stroke="#242424" stroke-width="10" stroke-linecap="round" />
-        <path d="M3278.66 219.658C3278.66 219.658 3264.83 198.295 3292.04 188.77C3315.04 180.721 3330.98 201.346 3330.98 201.346" stroke="#242424" stroke-width="10" stroke-linecap="round" />
+        <path d="M3320 311C3320 311 3320.3 371 3358.27 371C3390.35 371 3393 311 3393 311" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+        <path d="M3385 201.985C3385 201.985 3401.17 181.843 3427 190.854C3448.83 198.468 3434.66 219.309 3434.66 219.309" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
+        <path d="M3278.66 219.658C3278.66 219.658 3264.83 198.295 3292.04 188.77C3315.04 180.721 3330.98 201.346 3330.98 201.346" stroke="#242424" strokeWidth="10" strokeLinecap="round" />
         <defs>
-          <filter id="filter0_b_114_194" x="477.626" y="416.579" width="222.442" height="202.125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter0_b_114_194" x="477.626" y="416.579" width="222.442" height="202.125" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter1_b_114_194" x="628.333" y="415.851" width="222.683" height="201.875" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter1_b_114_194" x="628.333" y="415.851" width="222.683" height="201.875" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter2_b_114_194" x="939.276" y="412.999" width="222.437" height="201.286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter2_b_114_194" x="939.276" y="412.999" width="222.437" height="201.286" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter3_b_114_194" x="1090" y="412.279" width="222.683" height="201.04" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter3_b_114_194" x="1090" y="412.279" width="222.683" height="201.04" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter4_b_114_194" x="1389.6" y="412.997" width="222.437" height="201.286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter4_b_114_194" x="1389.6" y="412.997" width="222.437" height="201.286" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter5_b_114_194" x="1540.32" y="412.277" width="222.683" height="201.04" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter5_b_114_194" x="1540.32" y="412.277" width="222.683" height="201.04" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter6_b_114_194" x="1830.29" y="423.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter6_b_114_194" x="1830.29" y="423.459" width="223.267" height="200.229" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter7_b_114_194" x="1983.03" y="422.746" width="223.528" height="199.992" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter7_b_114_194" x="1983.03" y="422.746" width="223.528" height="199.992" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter8_b_114_194" x="43.2038" y="413.366" width="222.44" height="201.78" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter8_b_114_194" x="43.2038" y="413.366" width="222.44" height="201.78" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter9_b_114_194" x="174.922" y="413.653" width="222.683" height="201.531" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter9_b_114_194" x="174.922" y="413.653" width="222.683" height="201.531" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter10_b_114_194" x="2283.76" y="415.114" width="222.907" height="206.524" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter10_b_114_194" x="2283.76" y="415.114" width="222.907" height="206.524" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter11_b_114_194" x="2435.55" y="414.34" width="223.128" height="206.248" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter11_b_114_194" x="2435.55" y="414.34" width="223.128" height="206.248" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter12_b_114_194" x="2733.08" y="424.435" width="222.404" height="196.348" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter12_b_114_194" x="2733.08" y="424.435" width="222.404" height="196.348" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter13_b_114_194" x="2883.8" y="423.772" width="222.683" height="196.131" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter13_b_114_194" x="2883.8" y="423.772" width="222.683" height="196.131" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter14_b_114_194" x="3160.4" y="411" width="222.437" height="201.286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter14_b_114_194" x="3160.4" y="411" width="222.437" height="201.286" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
           </filter>
-          <filter id="filter15_b_114_194" x="3311.12" y="410.281" width="222.683" height="201.04" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter15_b_114_194" x="3311.12" y="410.281" width="222.683" height="201.04" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="40" />
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_114_194" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_114_194" result="shape" />
