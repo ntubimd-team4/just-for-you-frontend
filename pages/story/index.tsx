@@ -1,5 +1,5 @@
 import Layout from '@/components/frontend/Layout';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 import styles from '@/styles/frontend/_Story.module.scss';
@@ -8,15 +8,31 @@ import { HappyMonster } from '@/components/frontend/Illustrators/yellowSVG';
 import summaryAPI from '@/services/summaryRecordAPI';
 import Loading from '@/components/frontend/Loading';
 import { TfiReload } from 'react-icons/tfi';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
+
+type StoryResType = {
+  thumbnails: string,
+  link: string,
+  song: string,
+}
 
 export default function Story() {
+  const { status } = useSession();
+  const router = useRouter();
   const [isTell, setIsTell] = useState(false);
   const [loading, setIsLoading] = useState(false);
   const [story, setStory] = useState('');
   const [hint, setHint] = useState<string>('載入中');
   const [emotionData, setEmotionData] = useState([]);
-  const [musicData, setMusicData] = useState([]);
+  const [musicData, setMusicData] = useState<StoryResType[]>([]);
   const handleStory = (event: any) => setStory(event?.target.value);
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/');
+    }
+  }, [router, status]);
 
   const tellStory = async () => {
     if (story !== '') {
