@@ -8,7 +8,7 @@ export default function Login() {
   const { status } = useSession();
 
   if (status === 'authenticated') {
-    router.push('/');
+    return router.push('/');
   } else {
     return (
       <Layout>

@@ -15,20 +15,23 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (status === 'authenticated') {
-      const login = async () => {
-        try {
-          await userAPI.login(session?.id_token);
-          const response = await userAPI.getAuth();
-          const data = response.data;
+      if (localStorage.getItem('token') === null) {
+        const login = async () => {
+          try {
+            await userAPI.login(session?.id_token);
+            const response = await userAPI.getAuth();
+            const data = response.data;
 
-          setAuthorization(data.description);
-        } catch (error: any) {
-          signOut();
-          console.log(error.message);
-        }
-      };
+            setAuthorization(data.description);
+          } catch (error: any) {
+            signOut();
+            localStorage.clear();
+            console.log(error.message);
+          }
+        };
 
-      login();
+        login();
+      }
     }
   }, [session?.id_token, status]);
 
