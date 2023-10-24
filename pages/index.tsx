@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { useAuthContext } from '@/context/authContext';
 import { useRouter } from 'next/router';
 import Loading from '@/components/frontend/Loading';
+import Head from 'next/head';
 
 export default function Home() {
-  const { 'data': session, status } = useSession();
+  const { status } = useSession();
   const route = useRouter();
   const { authorization } = useAuthContext();
 
@@ -24,6 +25,18 @@ export default function Home() {
   }, [authorization, route, status]);
 
   return (
-    <Loading hint={'載入中'} />
+    <>
+      <Head>
+        <title>諮屬於你</title>
+        <meta charSet="UTF-8" />
+        <meta name="description" content="諮屬於你-找到您的心靈場所" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow" />
+        <meta name="copyright" content="諮屬於你" />
+        <meta name="og:title" content="諮屬於你" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Loading hint={'載入中'} />
+    </>
   );
 }

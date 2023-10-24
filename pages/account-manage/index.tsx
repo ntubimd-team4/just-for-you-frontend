@@ -32,9 +32,9 @@ export default function AccountList() {
     }
   }, [router, status]);
 
-  const handleEdit = async (id: string) => {
+  const handleEdit = async (userId: string) => {
     try {
-      const response = await userAPI.getSingleUser(id);
+      const response = await userAPI.getSingleUser(userId);
 
       setSingleData(response.data);
     } catch (err: any) {
@@ -42,9 +42,9 @@ export default function AccountList() {
     }
   };
 
-  const handleStatue = async (id: string) => {
+  const handleStatue = async (userId: string) => {
     try {
-      await userAPI.patchStatus({ 'id': id });
+      await userAPI.patchStatus({ 'userId': userId });
       const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
       const data = response.data;
 

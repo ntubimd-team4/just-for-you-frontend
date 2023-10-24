@@ -29,7 +29,7 @@ export default function MyRecommend() {
   const hint = '載入中';
 
   useEffect(() => {
-    if (status === 'authenticated') {
+    if (status === 'unauthenticated') {
       router.push('/');
     } else {
       const fetchRecordData = async () => {

@@ -32,7 +32,7 @@ export default function Profile() {
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    if (status === 'authenticated') {
+    if (status === 'unauthenticated') {
       router.push('/');
     } else {
       const fetchProfileData = async () => {
@@ -50,9 +50,9 @@ export default function Profile() {
     }
   }, [router, status]);
 
-  const handleEdit = async (id: string | undefined) => {
+  const handleEdit = async (userId: string | undefined) => {
     try {
-      const response = await userAPI.getSingleUser(id);
+      const response = await userAPI.getSingleUser(userId);
 
       setSingleData(response.data);
     } catch (err: any) {
