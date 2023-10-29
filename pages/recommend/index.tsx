@@ -4,11 +4,12 @@ import Layout from '@/components/frontend/Layout';
 import recommendAPI from '@/services/recommendAPI';
 import styles from '@/styles/frontend/_Recommend.module.scss';
 import Loading from '@/components/frontend/Loading';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 type RecommendType = {
   establishTime: string;
   playList: PlayListType[];
-  thumbnails: string;
 }
 
 type PlayListType = {
@@ -17,29 +18,36 @@ type PlayListType = {
   emotionTag: number;
   link: string;
   song: string;
+  thumbnails: string;
 }
 
 export default function MyRecommend() {
+  const router = useRouter();
+  const { status } = useSession();
   const [recommendData, setRecommendData] = useState<RecommendType[]>([]);
-  const [hint, setHint] = useState('載入中');
   const [loading, setLoading] = useState(false);
+  const hint = '載入中';
 
   useEffect(() => {
-    const fetchRecordData = async () => {
-      setLoading(true);
-      try {
-        const response = await recommendAPI.getAllRecord();
-        const data = response.data;
+    if (status === 'unauthenticated') {
+      router.push('/');
+    } else {
+      const fetchRecordData = async () => {
+        setLoading(true);
+        try {
+          const response = await recommendAPI.getAllRecord();
+          const data = response.data;
 
-        setRecommendData(data);
-      } catch (error: any) {
-        alert(error.message);
-      }
-      setLoading(false);
-    };
+          setRecommendData(data);
+        } catch (error: any) {
+          alert(error.message);
+        }
+        setLoading(false);
+      };
 
-    fetchRecordData();
-  }, []);
+      fetchRecordData();
+    }
+  }, [router, status]);
 
   const handleCollection = (rid: any) => {
     const fetchData = async () => {

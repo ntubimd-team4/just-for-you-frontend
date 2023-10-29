@@ -22,6 +22,7 @@ export default function Navbar() {
 
   const handleGoogleLogOut = async () => {
     signOut({ 'callbackUrl': 'http://localhost:3000' });
+    localStorage.clear();
   };
 
   return (
