@@ -2,32 +2,37 @@ import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { AccountListType } from '@/types/User.interface';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Button } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 export default function Consultation() {
   const router = useRouter();
+  const { status } = useSession();
   const [rowData, setRowData] = useState<AccountListType[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
-        const data = response.data.filter((result: { available: boolean; role: string }) =>
-          result.available === true && result.role === '學生');
+    if (status === 'unauthenticated') {
+      router.push('/');
+    } else if (status === 'authenticated') {
+      const fetchData = async () => {
+        try {
+          const response = await userAPI.getStudentList();
+          const data = response.data;
 
-        setRowData(data);
-      } catch (error: any) {
-        alert(error.message);
-      }
-    };
+          setRowData(data);
+        } catch (error: any) {
+          alert(error.message);
+        }
+      };
 
-    fetchData();
-  }, []);
+      fetchData();
+    }
+  }, [router, status]);
 
   return (
     <Layout>
-      <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>摘要管理</h1>
+      <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>個案管理</h1>
       <TableContainer>
         <Table variant="simple">
           <Thead>
