@@ -16,10 +16,10 @@ export default function AccountList() {
   useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/');
-    } else {
+    } else if (status === 'authenticated') {
       const fetchData = async () => {
         try {
-          const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
+          const response = await userAPI.getAllList({ 'type': 0, 'page': 1, 'count': 50 });
           const data = response.data;
 
           setRowData(data);
@@ -45,7 +45,7 @@ export default function AccountList() {
   const handleStatue = async (userId: string) => {
     try {
       await userAPI.patchStatus({ 'userId': userId });
-      const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
+      const response = await userAPI.getAllList({ 'type': 0, 'page': 1, 'count': 50 });
       const data = response.data;
 
       setRowData(data);

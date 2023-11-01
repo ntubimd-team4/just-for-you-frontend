@@ -31,7 +31,7 @@ export default function MyRecommend() {
   useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/');
-    } else {
+    } else if (status === 'authenticated') {
       const fetchRecordData = async () => {
         setLoading(true);
         try {

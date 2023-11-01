@@ -34,7 +34,7 @@ export default function Profile() {
   useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/');
-    } else {
+    } else if (status === 'authenticated') {
       const fetchProfileData = async () => {
         try {
           const response = await userAPI.getProfile();
