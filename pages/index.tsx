@@ -7,22 +7,24 @@ import Head from 'next/head';
 
 export default function Home() {
   const { status } = useSession();
-  const route = useRouter();
+  const router = useRouter();
   const { authorization } = useAuthContext();
 
   useEffect(() => {
-    if (status === 'authenticated') {
-      if (authorization === '學生') {
-        route.push('/story');
+    if (status === 'authenticated' && authorization !== null) {
+      if (authorization === '個案管理師') {
+        router.push('/account-manage');
       } else if (authorization === '諮商師') {
-        route.push('/account-manage');
+        router.push('/consultation-manage');
+      } else if (authorization === '學生') {
+        router.push('/story');
       }
-    } else if (status === 'unauthenticated') {
-      route.push('/login');
     } else if (status === 'loading') {
       console.log('loading...');
+    } else {
+      router.push('/login');
     }
-  }, [authorization, route, status]);
+  }, [authorization, router, status]);
 
   return (
     <>

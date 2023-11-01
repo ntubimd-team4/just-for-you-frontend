@@ -13,8 +13,14 @@ const userAPI = {
   'getSingleUser': (userId?: string): Promise<Response> =>
     API.get(`${BASE_URL}/${userId}`),
 
-  'getList': (data: any): Promise<Response> =>
+  'getAllList': (data: any): Promise<Response> =>
     API.get(USER_LIST_URL, { 'params': { ...data } }),
+
+  'getStudentList': (): Promise<Response> =>
+    API.get('/user-account/student'),
+
+  'getTeacherList': (): Promise<Response> =>
+    API.get('/user-account/teacher'),
 
   'getAuth': (): Promise<Response> =>
     API.get(USER_ROLE_URL),
