@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setAuthorization(data.description);
         } catch (error: any) {
           signOut();
-          console.log(error.message);
+          localStorage.clear();
         }
       };
 

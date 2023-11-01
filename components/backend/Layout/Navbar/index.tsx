@@ -7,7 +7,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useAuthContext } from '@/context/authContext';
-import { StudentLinks, TeacherLinks } from './NavData';
+import { MangerLinks, StudentLinks, TeacherLinks } from './NavData';
 import Image from 'next/image';
 import Logo from '/public/images/logo.png';
 
@@ -22,6 +22,7 @@ export default function Navbar() {
 
   const handleGoogleLogOut = async () => {
     signOut({ 'callbackUrl': 'http://localhost:3000' });
+    localStorage.clear();
   };
 
   return (
@@ -45,7 +46,7 @@ export default function Navbar() {
               as={'nav'}
               spacing={4}
               display={{ 'base': 'none', 'md': 'flex' }}>
-              {(authorization === '學生' ? StudentLinks : TeacherLinks).map(data => (
+              {authorization && (authorization === '個案管理師' ? MangerLinks : TeacherLinks).map(data => (
                 <NavLink key={data.link} link={data.link}>{data.text}</NavLink>
               ))}
             </HStack>

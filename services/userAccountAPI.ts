@@ -10,11 +10,17 @@ const userAPI = {
   'login': (token?: string): Promise<Response> =>
     API.post('/login', undefined, { 'headers': { 'X-Client-Token': token } }),
 
-  'getSingleUser': (id?: string): Promise<Response> =>
-    API.get(`${BASE_URL}/${id}`),
+  'getSingleUser': (userId?: string): Promise<Response> =>
+    API.get(`${BASE_URL}/${userId}`),
 
-  'getList': (data: any): Promise<Response> =>
+  'getAllList': (data: any): Promise<Response> =>
     API.get(USER_LIST_URL, { 'params': { ...data } }),
+
+  'getStudentList': (): Promise<Response> =>
+    API.get('/user-account/student'),
+
+  'getTeacherList': (): Promise<Response> =>
+    API.get('/user-account/teacher'),
 
   'getAuth': (): Promise<Response> =>
     API.get(USER_ROLE_URL),

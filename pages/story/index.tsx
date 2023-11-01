@@ -1,5 +1,5 @@
 import Layout from '@/components/frontend/Layout';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 import styles from '@/styles/frontend/_Story.module.scss';
@@ -8,15 +8,34 @@ import { HappyMonster } from '@/components/frontend/Illustrators/yellowSVG';
 import summaryAPI from '@/services/summaryRecordAPI';
 import Loading from '@/components/frontend/Loading';
 import { TfiReload } from 'react-icons/tfi';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
+import recommendAPI from '@/services/recommendAPI';
+
+type StoryResType = {
+  thumbnails: string,
+  link: string,
+  song: string,
+}
 
 export default function Story() {
+  const { 'data': session, status } = useSession();
+  const router = useRouter();
   const [isTell, setIsTell] = useState(false);
   const [loading, setIsLoading] = useState(false);
   const [story, setStory] = useState('');
   const [hint, setHint] = useState<string>('載入中');
+  const [sid, setSid] = useState();
+  const [emotionText, setEmotionText] = useState('');
   const [emotionData, setEmotionData] = useState([]);
-  const [musicData, setMusicData] = useState([]);
+  const [musicData, setMusicData] = useState<StoryResType[]>([]);
   const handleStory = (event: any) => setStory(event?.target.value);
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/');
+    }
+  }, [router, status]);
 
   const tellStory = async () => {
     if (story !== '') {
@@ -28,6 +47,8 @@ export default function Story() {
         setIsLoading(false);
         setEmotionData(response.data.value);
         setMusicData(response.data.musicList);
+        setEmotionText(response.data.text);
+        setSid(response.data.sid);
         setIsTell(true);
       } catch (err: any) {
         setIsLoading(false);
@@ -35,6 +56,22 @@ export default function Story() {
       }
     } else {
       alert('請輸入文字');
+    }
+  };
+
+  const ReRecommend = async () => {
+    setIsLoading(true);
+    setHint('重新推薦音樂給您');
+    try {
+      const response = await recommendAPI.getReRecommend(sid);
+
+      setIsLoading(false);
+      setMusicData(response.data.musicList);
+      setEmotionText(response.data.text);
+      setIsTell(true);
+    } catch (err: any) {
+      setIsLoading(false);
+      alert(err.message);
     }
   };
 
@@ -56,9 +93,9 @@ export default function Story() {
             <div className={styles.role}>
               <div className={styles.speechBubble}>
                 <div className={styles.content}>
-                  <h2 className={styles.title}>您當前可能有的情緒</h2>
+                  <h2 className={styles.title}>Hello!{' '}{session?.user?.name}</h2>
                   <div className={styles.tagGroup}>
-                    {emotionData}
+                    {emotionText}
                   </div>
                 </div>
               </div>
@@ -70,7 +107,7 @@ export default function Story() {
                 {musicData.map((music, index) => (
                   <article key={index} className={styles.list}>
                     <div className={styles.cover}>
-                      <img src={music.thumbnails} alt="" />
+                      <img src={music.thumbnails} alt="cover" />
                     </div>
                     <div className={styles.wrap}>
                       <a href={music.link} target="_blank">
@@ -81,8 +118,8 @@ export default function Story() {
                   </article>
                 ))}
               </section>
-              <button className={styles.reSendBtn} onClick={() => tellStory()}>
-                <TfiReload style={{ 'marginRight': '10px' }}/>重新推薦
+              <button className={styles.reSendBtn} onClick={() => ReRecommend()}>
+                <TfiReload style={{ 'marginRight': '10px' }} />重新推薦
               </button>
             </section>
             {/* <Alert status="warning" my={5}>

@@ -1,0 +1,41 @@
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+.content {
+    display: flex;
+    margin: 2rem 0;
+
+    .item {
+        width: 50%;
+        margin: 0.5rem;
+    }
+
+    .summary, .origin, .record {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        border: 1px solid #e3e3e3;
+        background-color: #fff;
+        filter: drop-shadow(4px 7px 0px #e3e3e3);
+    }
+
+    .record {
+        height: 100%;
+    }
+
+    .editBtn {
+        background-color: #e3e3e3;
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 50px;
+    }
+}

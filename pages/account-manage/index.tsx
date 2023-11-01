@@ -4,29 +4,37 @@ import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch } from '@chakra-ui/react';
 import { EditProfileModal } from '@/components/backend/Modal';
 import { AccountListType } from '@/types/User.interface';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 export default function AccountList() {
+  const { status } = useSession();
+  const router = useRouter();
   const [rowData, setRowData] = useState<AccountListType[]>([]);
   const [singleData, setSingleData] = useState<AccountListType>({});
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
-        const data = response.data;
+    if (status === 'unauthenticated') {
+      router.push('/');
+    } else if (status === 'authenticated') {
+      const fetchData = async () => {
+        try {
+          const response = await userAPI.getAllList({ 'type': 0, 'page': 1, 'count': 50 });
+          const data = response.data;
 
-        setRowData(data);
-      } catch (error: any) {
-        alert(error.message);
-      }
-    };
+          setRowData(data);
+        } catch (error: any) {
+          alert(error.message);
+        }
+      };
 
-    fetchData();
-  }, []);
+      fetchData();
+    }
+  }, [router, status]);
 
-  const handleEdit = async (id: string) => {
+  const handleEdit = async (userId: string) => {
     try {
-      const response = await userAPI.getSingleUser(id);
+      const response = await userAPI.getSingleUser(userId);
 
       setSingleData(response.data);
     } catch (err: any) {
@@ -34,10 +42,10 @@ export default function AccountList() {
     }
   };
 
-  const handleStatue = async (id: string) => {
+  const handleStatue = async (userId: string) => {
     try {
-      await userAPI.patchStatus({ 'id': id });
-      const response = await userAPI.getList({ 'type': 0, 'page': 1, 'count': 50 });
+      await userAPI.patchStatus({ 'userId': userId });
+      const response = await userAPI.getAllList({ 'type': 0, 'page': 1, 'count': 50 });
       const data = response.data;
 
       setRowData(data);
@@ -48,7 +56,7 @@ export default function AccountList() {
 
   return (
     <Layout>
-      <h1>帳號管理</h1>
+      <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>帳號管理</h1>
       <TableContainer>
         <Table variant="simple">
           <Thead>
