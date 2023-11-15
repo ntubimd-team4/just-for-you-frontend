@@ -13,13 +13,14 @@
     display: flex;
     margin: 2rem 0;
 
-    .item {
+    .row {
         width: 50%;
-        margin: 0.5rem;
     }
 
-    .summary, .origin, .record {
-        width: 100%;
+    .item {
+        min-height: 200px;
+        margin: 0.5rem;
+        box-sizing: content-box;
         padding: 1rem;
         margin-bottom: 1rem;
         border-radius: 10px;
@@ -29,7 +30,19 @@
     }
 
     .record {
+        min-height: 40vh;
         height: 100%;
+
+        .recordArea {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #eee;
+
+            &:focus {
+                outline-color: #b8b2b2;
+            }
+        }
     }
 
     .editBtn {
@@ -37,5 +50,6 @@
         padding: 0.5rem;
         width: 100%;
         border-radius: 50px;
+        margin-bottom: 0.5rem;
     }
 }
