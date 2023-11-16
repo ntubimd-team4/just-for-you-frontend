@@ -59,18 +59,16 @@
 
 .responseContainer {
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
     height: 80vh;
     color: #644132;
 
     .role {
         width: 30%;
         height: 100%;
-        padding: 1rem;
-
-        svg {
-            transform: scale(1.1);
-        }
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
 
         .speechBubble {
             width: 625px;
@@ -81,7 +79,6 @@
             justify-content: center;
             background: #fff;
             position: relative;
-            margin-bottom: 7rem;
             -moz-border-radius: 200px;
             -webkit-border-radius: 200px;
             border-radius: 200px;
@@ -130,46 +127,84 @@
     }
 
     .recommendList {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 80%;
+        width: 50%;
 
         .playList {
             display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+
+            .head {
+                border-bottom: 1px solid #c4c1c1;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+            }
 
             .list {
                 display: flex;
-                flex-direction: column;
-                padding: 0.8rem;
-                margin-bottom: 1rem;
-                width: 20%;
-                background-color: #fff;
-                margin: 0 1rem;
+                padding: 10px 1rem;
+                box-sizing: border-box;
                 border-radius: 10px;
-                filter: drop-shadow(4px 7px 0px #e3e3e3);
+                user-select: none;
 
-                .cover {
-                    width: 100%;
-                    border-radius: 10px;
-                    margin-bottom: 1rem;
+                &:hover {
+                    background-color: #7a7373;
+                    color: #fff;
+                }
+
+                .numWrap {
+                    width: 10%;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .coverWrap {
+                    width: 10%;
+                    overflow: hidden;
+                    margin-right: 1rem;
+
+                    .cover {
+                        width: 50px;
+                        height: 50px;
+                        overflow: hidden;
+                    }
 
                     img {
-                        width: 100%;
-                        border-radius: 10px;
+                        width: auto;
+                        height: 100%;
+                        transform: scale(2);
                     }
                 }
 
-                .wrap {
+                .contentWrap {
                     display: flex;
+                    align-items: center;
                     justify-content: space-between;
+                    width: 100%;
 
-                    .link {
-                        width: 80%;
-                    }
+                    .func {
+                        display: flex;
+                        align-items: center;
 
-                    .mark {
-                        font-size: 20px;
+                        .play {
+                            margin: 0 1rem;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: #ffd37a;
+                                transform: scale(1.2);
+                            }
+                        }
+
+                        .like {
+                            cursor: pointer;
+
+                            &:hover {
+                                color: rgb(255, 121, 121);
+                                transform: scale(1.2);
+                            }
+                        }
                     }
                 }
             }
@@ -193,6 +228,7 @@
         font-size: 30px;
         margin-bottom: 1rem;
         color: #E79C0B;
+        font-weight: bold;
     }
 }
 
@@ -202,7 +238,7 @@
     }
 
     40% {
-        width: 1000px;
+        width: 800px;
     }
 
     80% {
@@ -216,7 +252,7 @@
     }
 
     40% {
-        width: 1000px;
+        width: 800px;
     }
 
     80% {
@@ -230,7 +266,7 @@
     }
 
     40% {
-        width: 1000px;
+        width: 800px;
     }
 
     80% {
