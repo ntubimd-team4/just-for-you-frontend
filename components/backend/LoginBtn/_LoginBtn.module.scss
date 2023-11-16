@@ -29,6 +29,10 @@
   background-color: #fff;
   width: 500px;
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
   img {
     margin-right: 1rem;
   }

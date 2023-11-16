@@ -12,12 +12,18 @@
 
     .menu {
         display: flex;
+        align-items: center;
     }
 }
 
 .icon {
+    position: relative;
     font-size: 30px;
     cursor: pointer;
     color: #644132;
     margin-right: 2rem;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }

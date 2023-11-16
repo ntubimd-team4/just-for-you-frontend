@@ -1,6 +1,7 @@
 .container {
     min-height: 100vh;
     width: 100vw;
-    background-color: #fff8e6;
+    background: rgb(255, 250, 237);
+    background: linear-gradient(180deg, rgba(255, 250, 237, 1) 0%, rgba(255, 250, 236, 1) 40%, rgba(255, 246, 222, 1) 100%);
     padding: 2rem 5rem;
 }
