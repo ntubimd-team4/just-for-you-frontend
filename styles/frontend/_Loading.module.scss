@@ -8,10 +8,9 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: rgb(255, 250, 237);
-    background: linear-gradient(180deg, rgba(255, 250, 237, 0.97) 0%, rgba(255, 250, 236, 0.97) 40%, rgba(255, 246, 222, 0.97) 100%);
-
+    background: #fff8e6;
     user-select: none;
+    z-index: 999;
 
     img {
         width: 50%;
@@ -20,7 +19,6 @@
     .hint {
         font-size: 25px;
         margin: 2rem;
-        color: #644132;
         letter-spacing: 5px;
         font-weight: 500;
     }

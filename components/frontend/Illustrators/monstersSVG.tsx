@@ -2,6 +2,7 @@ const monsters = {
   'display': 'flex',
   'justifyContent': 'center',
   'marginBottom': '-10px',
+  'width': '100%'
 };
 
 export function Monsters() {

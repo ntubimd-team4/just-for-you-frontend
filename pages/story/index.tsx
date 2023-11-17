@@ -61,7 +61,7 @@ export default function Story() {
     }
   };
 
-  const ReRecommend = async () => {
+  const reRecommend = async () => {
     setIsLoading(true);
     setHint('重新推薦音樂給您');
     try {
@@ -137,7 +137,7 @@ export default function Story() {
                   </article>
                 ))}
               </section>
-              {/* <button className={styles.reSendBtn} onClick={() => ReRecommend()}>
+              {/* <button className={styles.reSendBtn} onClick={() => reRecommend()}>
                 <TfiReload style={{ 'marginRight': '10px' }} />重新推薦
               </button> */}
             </section>

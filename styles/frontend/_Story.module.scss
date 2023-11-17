@@ -5,7 +5,6 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
-    color: #644132;
 
     .text {
         width: 100%;
@@ -42,7 +41,7 @@
             font-size: 25px;
 
             &.available {
-                background-color: #E79C0B;
+                background-color: #e79c0b;
 
                 &:hover {
                     transform: scale(1.1);
@@ -60,8 +59,8 @@
 .responseContainer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     height: 80vh;
-    color: #644132;
 
     .role {
         width: 30%;
@@ -139,6 +138,8 @@
                 border-bottom: 1px solid #c4c1c1;
                 margin-bottom: 10px;
                 padding-bottom: 5px;
+                font-size: 30px;
+                color: #e79c0b;
             }
 
             .list {
@@ -227,7 +228,7 @@
     .title {
         font-size: 30px;
         margin-bottom: 1rem;
-        color: #E79C0B;
+        color: #e79c0b;
         font-weight: bold;
     }
 }
@@ -238,7 +239,7 @@
     }
 
     40% {
-        width: 800px;
+        width: 700px;
     }
 
     80% {
@@ -252,7 +253,7 @@
     }
 
     40% {
-        width: 800px;
+        width: 700px;
     }
 
     80% {
@@ -266,7 +267,7 @@
     }
 
     40% {
-        width: 800px;
+        width: 700px;
     }
 
     80% {
