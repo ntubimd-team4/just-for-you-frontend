@@ -7,7 +7,7 @@ import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 
 export default function LoginBtn() {
   const handleGoogleSignIn = async () => {
-    signIn('google', { 'callbackUrl': process.env.NEXT_PUBLIC_NEXTAUTH_URL });
+    signIn('google', { 'callbackUrl': process.env.NEXT_PUBLIC_CALLBACK_URL });
   };
 
   return (
