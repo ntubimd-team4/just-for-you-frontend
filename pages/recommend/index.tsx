@@ -6,6 +6,8 @@ import styles from '@/styles/frontend/_Recommend.module.scss';
 import Loading from '@/components/frontend/Loading';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
+import { FiHeart, FiYoutube } from 'react-icons/fi';
+import YoutubeEmbed from '@/components/frontend/YoutubeModal';
 
 type RecommendType = {
   establishTime: string;
@@ -26,6 +28,8 @@ export default function MyRecommend() {
   const { status } = useSession();
   const [recommendData, setRecommendData] = useState<RecommendType[]>([]);
   const [loading, setLoading] = useState(false);
+  const [isEndedOpen, setIsEndedOpen] = useState(false);
+  const [musicId, setMusicId] = useState('');
   const hint = '載入中';
 
   useEffect(() => {
@@ -66,31 +70,55 @@ export default function MyRecommend() {
     fetchData();
   };
 
+  const videoEnbed = (musicId: string) => {
+    const embedId = musicId.split('?v=')[1];
+
+    setIsEndedOpen(true);
+    setMusicId(embedId);
+  };
+
   return (
     <>
       <Layout>
         <section className={styles.container}>
           <h1 className={styles.pageTitle}>推薦紀錄</h1>
-          {recommendData.map((data, index) =>
-            <div className={styles.timeline} key={index}>
-              <p className={styles.time}>{data.establishTime}</p>
-              <div className={styles.list}>
-                {data.playList.map((list, index) =>
-                  <div className={styles.content} key={index}>
-                    <div className={styles.cover}>
-                      <img src={list.thumbnails} alt="" />
-                    </div>
-                    <div className={styles.head}>
-                      <h6 className={styles.title}>{list.song}</h6>
-                      <span className={styles.star} onClick={() => handleCollection(list.rid)}>
-                        {list.isCollection ? <FaStar /> : <FaRegStar />}
-                      </span>
-                    </div>
-                  </div>)}
-              </div>
-            </div>)}
+          <section className={styles.row}>
+            <div className={styles.item}>
+              {recommendData.map((data, index) =>
+                <div className={styles.timeline} key={index}>
+                  <p className={styles.time}>{data.establishTime}</p>
+                  <section className={styles.playList}>
+                    {data.playList.map((music, index) => (
+                      <article className={styles.list} key={index}>
+                        <div className={styles.numWrap}>
+                          <h3>{index + 1}</h3>
+                        </div>
+                        <div className={styles.coverWrap}>
+                          <div className={styles.cover}>
+                            <img src={music.thumbnails} alt="cover" />
+                          </div>
+                        </div>
+                        <div className={styles.contentWrap}>
+                          <h3 className={styles.song}>{music.song}</h3>
+                          <div className={styles.func}>
+                            <span className={styles.play} onClick={() => videoEnbed(music.link)}>
+                              <FiYoutube />
+                            </span>
+                            <span className={styles.like}>
+                              <FiHeart />
+                            </span>
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </section>
+                </div>)}
+            </div>
+            <div className={`${styles.item} ${styles.search}`}>搜尋框</div>
+          </section>
         </section>
       </Layout>
+      {isEndedOpen && <YoutubeEmbed embedId={musicId as string} />}
       {loading && <Loading hint={hint} />}
     </>
   );

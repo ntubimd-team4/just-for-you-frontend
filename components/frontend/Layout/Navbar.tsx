@@ -12,7 +12,7 @@ export default function Navbar() {
   const { authorization } = useAuthContext();
 
   const handleGoogleLogOut = async () => {
-    signOut({ 'callbackUrl': 'http://localhost:3000' });
+    signOut({ 'callbackUrl': process.env.NEXT_PUBLIC_CALLBACK_URL });
     localStorage.clear();
   };
 

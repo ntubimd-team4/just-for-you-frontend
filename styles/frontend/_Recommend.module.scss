@@ -1,38 +1,111 @@
 .container {
     .pageTitle {
-        font-size: 25px;
+        position: fixed;
+        width: 100%;
+        font-size: 30px;
+        color: #e79c0b;
+        background: #fff8e6f7;
+        z-index: 1;
+        padding-bottom: 0.5rem;
+    }
+
+    .row {
+        display: flex;
+        position: relative;
+    }
+
+    .item {
+        width: 50%;
+        margin-top: 3rem;
+
+        &.search {
+            position: fixed;
+            right: 0;
+            padding: 0 5rem;
+        }
     }
 
     .timeline {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 20px;
+
         .time {
-            margin: 1rem 0;
+            margin-bottom: 1rem;
             font-size: 20px;
         }
 
-        .list {
+        .playList {
             display: flex;
-            margin-bottom: 5rem;
+            flex-direction: column;
+            justify-content: space-around;
 
-            .content {
-                margin: 0 1rem;
-            }
-
-            .cover {
-                margin-bottom: 1rem;
-
-                img {
-                    border-radius: 10px;
-                }
-            }
-
-            .head {
+            .list {
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 20px;
+                padding: 10px 1rem;
+                box-sizing: border-box;
+                border-radius: 10px;
+                user-select: none;
 
-                .star {
-                    cursor: pointer;
+                &:hover {
+                    background-color: #7a7373;
+                    color: #fff;
+                }
+
+                .numWrap {
+                    width: 10%;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .coverWrap {
+                    width: 10%;
+                    overflow: hidden;
+                    margin-right: 1rem;
+
+                    .cover {
+                        width: 50px;
+                        height: 50px;
+                        overflow: hidden;
+                    }
+
+                    img {
+                        width: auto;
+                        height: 100%;
+                        transform: scale(2);
+                    }
+                }
+
+                .contentWrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .func {
+                        display: flex;
+                        align-items: center;
+
+                        .play {
+                            margin: 0 1rem;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: #ffd37a;
+                                transform: scale(1.2);
+                            }
+                        }
+
+                        .like {
+                            cursor: pointer;
+
+                            &:hover {
+                                color: rgb(255, 121, 121);
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
                 }
             }
         }

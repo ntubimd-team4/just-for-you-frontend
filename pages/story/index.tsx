@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 import styles from '@/styles/frontend/_Story.module.scss';
-import { FiBookmark, FiSend } from 'react-icons/fi';
+import { FiHeart, FiSend, FiYoutube } from 'react-icons/fi';
 import { HappyMonster } from '@/components/frontend/Illustrators/yellowSVG';
 import summaryAPI from '@/services/summaryRecordAPI';
 import Loading from '@/components/frontend/Loading';
-import { TfiReload } from 'react-icons/tfi';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
+import YoutubeEmbed from '@/components/frontend/YoutubeModal';
 
 type StoryResType = {
   thumbnails: string,
@@ -23,7 +23,9 @@ export default function Story() {
   const router = useRouter();
   const [isTell, setIsTell] = useState(false);
   const [loading, setIsLoading] = useState(false);
+  const [isEndedOpen, setIsEndedOpen] = useState(false);
   const [story, setStory] = useState('');
+  const [musicId, setMusicId] = useState('');
   const [hint, setHint] = useState<string>('載入中');
   const [sid, setSid] = useState();
   const [emotionText, setEmotionText] = useState('');
@@ -59,7 +61,7 @@ export default function Story() {
     }
   };
 
-  const ReRecommend = async () => {
+  const reRecommend = async () => {
     setIsLoading(true);
     setHint('重新推薦音樂給您');
     try {
@@ -73,6 +75,13 @@ export default function Story() {
       setIsLoading(false);
       alert(err.message);
     }
+  };
+
+  const videoEnbed = (musicId: string) => {
+    const embedId = musicId.split('?v=')[1];
+
+    setIsEndedOpen(true);
+    setMusicId(embedId);
   };
 
   return (
@@ -102,25 +111,35 @@ export default function Story() {
               <HappyMonster />
             </div>
             <section className={styles.recommendList}>
-              <h2 className={styles.title}>推薦給您</h2>
               <section className={styles.playList}>
+                <p className={styles.head}>推薦清單</p>
                 {musicData.map((music, index) => (
-                  <article key={index} className={styles.list}>
-                    <div className={styles.cover}>
-                      <img src={music.thumbnails} alt="cover" />
+                  <article className={styles.list} key={index}>
+                    <div className={styles.numWrap}>
+                      <h3>{index + 1}</h3>
                     </div>
-                    <div className={styles.wrap}>
-                      <a href={music.link} target="_blank">
-                        <h3 className={styles.song}>{music.song}</h3>
-                      </a>
-                      <span className={styles.mark}><FiBookmark /></span>
+                    <div className={styles.coverWrap}>
+                      <div className={styles.cover}>
+                        <img src={music.thumbnails} alt="cover" />
+                      </div>
+                    </div>
+                    <div className={styles.contentWrap}>
+                      <h3 className={styles.song}>{music.song}</h3>
+                      <div className={styles.func}>
+                        <span className={styles.play} onClick={() => videoEnbed(music.link)}>
+                          <FiYoutube />
+                        </span>
+                        <span className={styles.like}>
+                          <FiHeart />
+                        </span>
+                      </div>
                     </div>
                   </article>
                 ))}
               </section>
-              <button className={styles.reSendBtn} onClick={() => ReRecommend()}>
+              {/* <button className={styles.reSendBtn} onClick={() => reRecommend()}>
                 <TfiReload style={{ 'marginRight': '10px' }} />重新推薦
-              </button>
+              </button> */}
             </section>
             {/* <Alert status="warning" my={5}>
               <AlertIcon />注意：本系統並非心理諮商醫療診斷工具。如果您正面臨嚴重的心理健康問題，請立即尋求專業心理醫療服務。
@@ -128,6 +147,7 @@ export default function Story() {
           </section>
         }
       </Layout>
+      {isEndedOpen && <YoutubeEmbed embedId={musicId as string} />}
       {loading && <Loading hint={hint} />}
     </>
   );

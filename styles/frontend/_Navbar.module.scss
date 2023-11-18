@@ -1,9 +1,14 @@
 .container {
-    height: 80px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 2rem 5rem;
+    background: #fff8e6f7;
+    z-index: 998;
 
     .logo {
         width: 50px;
@@ -12,12 +17,18 @@
 
     .menu {
         display: flex;
+        align-items: center;
     }
 }
 
 .icon {
+    position: relative;
     font-size: 30px;
     cursor: pointer;
-    color: #644132;
     margin-right: 2rem;
+    color: #644132;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
