@@ -58,21 +58,22 @@
 
 .responseContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     height: 80vh;
 
     .role {
-        width: 30%;
+        width: auto;
         height: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-direction: column;
 
         .speechBubble {
             width: 625px;
-            height: 220px;
-            padding: 1rem 5rem;
+            height: auto;
+            min-height: 200px;
+            padding: 2rem 5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -94,9 +95,9 @@
                 border-right: 40px solid transparent;
                 border-top: 50px solid #fff;
                 content: "";
-                top: 210px;
+                top: 101%;
+                bottom: 0;
                 position: absolute;
-                left: 100px;
                 margin: auto;
                 -moz-animation: move 0.8s ease;
                 -webkit-animation: move 0.8s ease;
@@ -110,6 +111,11 @@
             }
         }
 
+        svg {
+            margin-top: 2rem;
+            max-height: 60%;
+        }
+
         .content {
             opacity: 0;
             -moz-animation: hello 2s forwards;
@@ -118,15 +124,12 @@
             -moz-animation-delay: 0.8s;
             -webkit-animation-delay: 0.8s;
             animation-delay: 0.8s;
-
-            .tagGroup {
-                display: flex;
-            }
         }
     }
 
     .recommendList {
-        width: 50%;
+        width: 30%;
+        margin: 0 4rem;
 
         .playList {
             display: flex;
@@ -138,8 +141,24 @@
                 border-bottom: 1px solid #c4c1c1;
                 margin-bottom: 10px;
                 padding-bottom: 5px;
-                font-size: 30px;
-                color: #e79c0b;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 30px;
+                    color: #e79c0b;
+                }
+
+                .reSendBtn {
+                    text-align: center;
+                    margin-left: 1rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
             }
 
             .list {
@@ -161,11 +180,10 @@
                 }
 
                 .coverWrap {
-                    width: 10%;
-                    overflow: hidden;
                     margin-right: 1rem;
 
                     .cover {
+                        border-radius: 5px;
                         width: 50px;
                         height: 50px;
                         overflow: hidden;
@@ -189,7 +207,6 @@
                         align-items: center;
 
                         .play {
-                            margin: 0 1rem;
                             cursor: pointer;
 
                             &:hover {
@@ -197,39 +214,16 @@
                                 transform: scale(1.2);
                             }
                         }
-
-                        .like {
-                            cursor: pointer;
-
-                            &:hover {
-                                color: rgb(255, 121, 121);
-                                transform: scale(1.2);
-                            }
-                        }
                     }
                 }
             }
-        }
-
-        .reSendBtn {
-            margin: 2rem 0;
-            border-radius: 10px;
-            border: 1px solid #644132;
-            text-align: center;
-            padding: 0.5rem;
-            width: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
         }
     }
 
     .title {
         font-size: 30px;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         color: #e79c0b;
-        font-weight: bold;
     }
 }
 
