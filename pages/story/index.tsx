@@ -3,19 +3,28 @@ import { useEffect, useState } from 'react';
 import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 import styles from '@/styles/frontend/_Story.module.scss';
-import { FiHeart, FiSend, FiYoutube } from 'react-icons/fi';
-import { HappyMonster } from '@/components/frontend/Illustrators/yellowSVG';
+import { FiSend, FiYoutube } from 'react-icons/fi';
+import { TfiReload } from 'react-icons/tfi';
 import summaryAPI from '@/services/summaryRecordAPI';
 import Loading from '@/components/frontend/Loading';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
 import YoutubeEmbed from '@/components/frontend/YoutubeModal';
+import Monster from '@/components/frontend/Monster';
 
 type StoryResType = {
   thumbnails: string,
   link: string,
   song: string,
+}
+
+type ResDataType = {
+  text: string,
+  color: string,
+  sid: string,
+  musicList: StoryResType[],
+  value: string,
 }
 
 export default function Story() {
@@ -27,9 +36,8 @@ export default function Story() {
   const [story, setStory] = useState('');
   const [musicId, setMusicId] = useState('');
   const [hint, setHint] = useState<string>('載入中');
-  const [sid, setSid] = useState();
+  const [resData, setResData] = useState<ResDataType>();
   const [emotionText, setEmotionText] = useState('');
-  const [emotionData, setEmotionData] = useState([]);
   const [musicData, setMusicData] = useState<StoryResType[]>([]);
   const handleStory = (event: any) => setStory(event?.target.value);
 
@@ -47,10 +55,10 @@ export default function Story() {
         const response = await summaryAPI.postSummary({ 'prompt': story });
 
         setIsLoading(false);
-        setEmotionData(response.data.value);
+        setResData(response.data);
+
         setMusicData(response.data.musicList);
         setEmotionText(response.data.text);
-        setSid(response.data.sid);
         setIsTell(true);
       } catch (err: any) {
         setIsLoading(false);
@@ -65,7 +73,7 @@ export default function Story() {
     setIsLoading(true);
     setHint('重新推薦音樂給您');
     try {
-      const response = await recommendAPI.getReRecommend(sid);
+      const response = await recommendAPI.getReRecommend(resData?.sid);
 
       setIsLoading(false);
       setMusicData(response.data.musicList);
@@ -105,14 +113,21 @@ export default function Story() {
                   <h2 className={styles.title}>Hello!{' '}{session?.user?.name}</h2>
                   <div className={styles.tagGroup}>
                     {emotionText}
+                    <br />
+                    <p>我們想推薦您幾首歌，讓您聽聽！</p>
                   </div>
                 </div>
               </div>
-              <HappyMonster />
+              <Monster color={resData?.color || ''} />
             </div>
             <section className={styles.recommendList}>
               <section className={styles.playList}>
-                <p className={styles.head}>推薦清單</p>
+                <div className={styles.head}>
+                  <h3>推薦清單</h3>
+                  <span className={styles.reSendBtn} onClick={() => reRecommend()}>
+                    <TfiReload />
+                  </span>
+                </div>
                 {musicData.map((music, index) => (
                   <article className={styles.list} key={index}>
                     <div className={styles.numWrap}>
@@ -129,21 +144,12 @@ export default function Story() {
                         <span className={styles.play} onClick={() => videoEnbed(music.link)}>
                           <FiYoutube />
                         </span>
-                        <span className={styles.like}>
-                          <FiHeart />
-                        </span>
                       </div>
                     </div>
                   </article>
                 ))}
               </section>
-              {/* <button className={styles.reSendBtn} onClick={() => reRecommend()}>
-                <TfiReload style={{ 'marginRight': '10px' }} />重新推薦
-              </button> */}
             </section>
-            {/* <Alert status="warning" my={5}>
-              <AlertIcon />注意：本系統並非心理諮商醫療診斷工具。如果您正面臨嚴重的心理健康問題，請立即尋求專業心理醫療服務。
-            </Alert> */}
           </section>
         }
       </Layout>
