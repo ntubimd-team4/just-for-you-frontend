@@ -10,11 +10,6 @@ import { FiYoutube } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import YoutubeEmbed from '@/components/frontend/YoutubeModal';
 
-// type RecommendType = {
-//   establishTime: string;
-//   playList: PlayListType[];
-// }
-
 type PlayListType = {
   rid: number;
   isCollection: boolean;
@@ -134,12 +129,9 @@ export default function MyRecommend() {
           <h1 className={styles.pageTitle}>推薦紀錄</h1>
           <section className={styles.row}>
             <section className={styles.item}>
-              {/* {recommendData.map((data, index) => */}
               <div className={styles.timeline}>
-                {/* <p className={styles.time}>{data.establishTime}</p> */}
                 <section className={styles.playList}>
                   {recommendData.map((music, index) => (
-                    // {data.playList.map((music, index) => (
                     <article className={styles.list} key={index}>
                       <div className={styles.numWrap}>
                         <h3>{index + 1}</h3>
@@ -167,7 +159,6 @@ export default function MyRecommend() {
                   ))}
                 </section>
               </div>
-              {/* )} */}
             </section>
             <section className={`${styles.item} ${styles.searchWrp}`}>
               <div>

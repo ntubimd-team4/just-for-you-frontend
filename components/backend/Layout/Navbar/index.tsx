@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import {
   Box, Flex, Avatar, HStack, IconButton, Button, Menu, MenuButton, MenuList, MenuItem,
-  MenuDivider, useDisclosure, useColorModeValue, Stack, MenuGroup,
+  useDisclosure, useColorModeValue, Stack, MenuGroup,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { signOut, useSession } from 'next-auth/react';
@@ -68,8 +68,6 @@ export default function Navbar() {
               </MenuButton>
               <MenuList>
                 <MenuGroup title={`${session?.user?.name} ${authorization}`}>
-                  <Link href={'/profile'}><MenuItem>我的帳戶</MenuItem></Link>
-                  <MenuDivider />
                   <MenuItem onClick={handleGoogleLogOut}>登出</MenuItem>
                 </MenuGroup>
               </MenuList>
