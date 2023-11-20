@@ -9,8 +9,8 @@ const summaryAPI = {
   'getSummaryDetail': (sid: any): Promise<Response> =>
     API.get(`${BASE_URL}/${sid}`),
 
-  'getAssignList': (): Promise<Response> =>
-    API.get(`${BASE_URL}/list`),
+  'getAssignList': (assign: any): Promise<Response> =>
+    API.get(`${BASE_URL}/list?assign=${assign}`),
 
   'assignSummary': (data: any): Promise<Response> =>
     API.patch(BASE_URL, data),

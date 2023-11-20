@@ -1,8 +1,8 @@
 import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch } from '@chakra-ui/react';
-import { EditProfileModal } from '@/components/backend/Modal';
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch, Tag } from '@chakra-ui/react';
+import { EditProfileModal } from '@/components/backend/EditProfileModal';
 import { AccountListType } from '@/types/User.interface';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
@@ -76,8 +76,10 @@ export default function AccountList() {
                 <Td>{data.userName}</Td>
                 <Td>{data.userId}</Td>
                 <Td>{data.department !== null ? data.department : '待填寫'}</Td>
-                <Td>{data.userSex !== null ? data.userSex : '待填寫'}</Td>
-                <Td>{data.role}</Td>
+                <Td><Tag colorScheme={(data?.userSex === '男') ? 'blue' : (data?.userSex === '女') ? 'red' : ''}>
+                  {data.userSex !== null ? data.userSex : '待填寫'}</Tag></Td>
+                <Td><Tag colorScheme={(data?.role === '個案管理師') ? 'green' : (data?.role === '諮商師') ? 'teal' : 'purple'}>
+                  {data.role}</Tag></Td>
                 <Td onClick={() => handleEdit(data.userId)}>
                   <EditProfileModal data={singleData} />
                 </Td>

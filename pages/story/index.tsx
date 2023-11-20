@@ -10,7 +10,7 @@ import Loading from '@/components/frontend/Loading';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
-import YoutubeEmbed from '@/components/frontend/YoutubeModal';
+import YouTubeEmbed from '@/components/frontend/YouTubeModal';
 import Monster from '@/components/frontend/Monster';
 
 type StoryResType = {
@@ -153,7 +153,7 @@ export default function Story() {
           </section>
         }
       </Layout>
-      {isEndedOpen && <YoutubeEmbed embedId={musicId as string} />}
+      {isEndedOpen && <YouTubeEmbed embedId={musicId as string} />}
       {loading && <Loading hint={hint} />}
     </>
   );

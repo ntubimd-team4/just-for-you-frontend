@@ -1,4 +1,4 @@
-export function HappyMonster() {
+export function MonsterSad() {
   return (
     <svg width="477" height="407" viewBox="0 0 477 407" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_b_114_84)">

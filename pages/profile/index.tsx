@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
-import { EditProfileModal } from '@/components/backend/Modal';
+import { EditProfileModal } from '@/components/backend/EditProfileModal';
 import { AccountListType } from '@/types/User.interface';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';

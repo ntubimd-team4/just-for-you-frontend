@@ -1,7 +1,7 @@
 import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { AccountListType } from '@/types/User.interface';
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Button } from '@chakra-ui/react';
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Button, Tag } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -50,7 +50,8 @@ export default function Consultation() {
                 <Td>{data.userName}</Td>
                 <Td>{data.userId}</Td>
                 <Td>{data.department !== null ? data.department : '待填寫'}</Td>
-                <Td>{data.userSex !== null ? data.userSex : '待填寫'}</Td>
+                <Td><Tag colorScheme={(data?.userSex === '男') ? 'blue' : (data?.userSex === '女') ? 'red' : ''}>
+                  {data.userSex !== null ? data.userSex : '待填寫'}</Tag></Td>
                 <Td>
                   <Button flex={1}
                     fontSize={'sm'}

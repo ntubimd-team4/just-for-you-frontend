@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '@/styles/frontend/_YoutubeEnbed.module.scss';
 
-const YoutubeEmbed = ({ embedId }:
+const YouTubeEmbed = ({ embedId }:
     { embedId: string }) =>
   (
     <section className={styles.container}>
@@ -18,4 +18,4 @@ const YoutubeEmbed = ({ embedId }:
     </section>
   );
 
-export default YoutubeEmbed;
+export default YouTubeEmbed;

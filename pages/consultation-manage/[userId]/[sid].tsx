@@ -12,6 +12,7 @@ type DetailType = {
   department: string,
   establishTime: string,
   topic: string,
+  emotion: string,
   summary: string,
   content: string,
   consultationContent: string,
@@ -71,13 +72,27 @@ export default function ConsultationRecord() {
     setIsEditOpen(false);
   };
 
+  const handleDate = (establishTime: string) => {
+    const dateArray = establishTime.split(' ')[0];
+    const timeArray = establishTime.split(' ')[1];
+    const year = dateArray.split('-')[0];
+    const month = dateArray.split('-')[1];
+    const date = dateArray.split('-')[2];
+    const hour = timeArray.split(':')[0];
+    const min = timeArray.split(':')[1];
+    const result = `${year}年${month}月${date}日 ${hour}點${min}分`;
+
+    return result;
+  };
+
   return (
     <Layout>
       <div className={styles.head}>
         <h1>摘要紀錄</h1>
-        <p>{detailData?.role}：{detailData?.userName}{' / '}{detailData?.department}</p>
+        <p>{detailData?.role}：{detailData?.userName}{' / '}{detailData?.department ? detailData?.department : '尚無科系'}</p>
       </div>
-      <p>{detailData?.establishTime}</p>
+      <p>{detailData && handleDate(detailData?.establishTime)}</p>
+      <p>情緒：{detailData?.emotion}</p>
       <p>諮商主題：{detailData?.topic}</p>
       <section className={styles.content}>
         <div className={styles.row}>

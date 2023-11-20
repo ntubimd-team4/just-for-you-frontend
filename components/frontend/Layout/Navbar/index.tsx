@@ -4,7 +4,7 @@ import styles from '@/styles/frontend/_Navbar.module.scss';
 import { FiMessageSquare, FiMusic } from 'react-icons/fi';
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
-import { Avatar, Button, Flex, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuList } from '@chakra-ui/react';
+import { Avatar, Button, Flex, Menu, MenuButton, MenuGroup, MenuItem, MenuList } from '@chakra-ui/react';
 import { useAuthContext } from '@/context/authContext';
 
 export default function Navbar() {
@@ -44,8 +44,6 @@ export default function Navbar() {
               </MenuButton>
               <MenuList>
                 <MenuGroup title={`${session?.user?.name} ${authorization}`}>
-                  <Link href={'/profile'}><MenuItem>我的帳戶</MenuItem></Link>
-                  <MenuDivider />
                   <MenuItem onClick={handleGoogleLogOut}>登出</MenuItem>
                 </MenuGroup>
               </MenuList>

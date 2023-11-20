@@ -1,22 +1,29 @@
-import { Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, } from '@chakra-ui/react';
+import { Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, RadioGroup, Stack, Radio } from '@chakra-ui/react';
 import { AccountListType } from '@/types/User.interface';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
 import { useRouter } from 'next/router';
 
 export function EditProfileModal({ data }: { data: AccountListType }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [department, setDepartment] = useState(data?.department);
-  const [sex, setSex] = useState(data?.userSex);
-  const handleDepartmentChange = (event: any) => setDepartment(event.target.value);
-  const handleSexChange = (event: any) => setSex(event.target.value);
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [department, setDepartment] = useState('');
+  const [value, setValue] = useState('');
+
+  const handleDepartmentChange = (event: any) => setDepartment(event.target.value);
+
+  useEffect(() => {
+    if (data) {
+      setDepartment(data?.department ? data.department : '');
+      setValue((data?.userSex === '男') ? '0' : (data?.userSex === '女') ? '1' : '');
+    }
+  }, [data]);
 
   const patchAccount = async () => {
     try {
       await userAPI.patchAccount({
         'userId': data.userId,
-        'userSex': sex === '男' ? 0 : 1,
+        'userSex': value,
         'department': department
       });
       onClose();
@@ -32,7 +39,7 @@ export function EditProfileModal({ data }: { data: AccountListType }) {
         fontSize={'sm'}
         rounded={'full'}
         _focus={{ 'bg': 'gray.200', }} onClick={onOpen} aria-label="編輯資料">
-          編輯資料
+        編輯資料
       </Button>
       <Modal
         isOpen={isOpen}
@@ -55,10 +62,12 @@ export function EditProfileModal({ data }: { data: AccountListType }) {
 
             <FormControl mt={4}>
               <FormLabel>性別</FormLabel>
-              <Input placeholder="請填寫性別"
-                onChange={(e: ChangeEvent) => handleSexChange(e)}
-                value={sex}
-              />
+              <RadioGroup onChange={setValue} value={value}>
+                <Stack direction="row">
+                  <Radio value="0">男姓</Radio>
+                  <Radio value="1">女性</Radio>
+                </Stack>
+              </RadioGroup>
             </FormControl>
           </ModalBody>
 
