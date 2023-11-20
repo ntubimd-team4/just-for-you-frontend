@@ -7,7 +7,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useAuthContext } from '@/context/authContext';
-import { MangerLinks, StudentLinks, TeacherLinks } from './NavData';
+import { MangerLinks, StudentLinks, TeacherLinks } from './navData';
 import Image from 'next/image';
 import Logo from '/public/images/logo.png';
 

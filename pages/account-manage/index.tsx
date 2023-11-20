@@ -2,7 +2,7 @@ import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch, Tag } from '@chakra-ui/react';
-import { EditProfileModal } from '@/components/backend/Modal';
+import { EditProfileModal } from '@/components/backend/EditProfileModal';
 import { AccountListType } from '@/types/User.interface';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';

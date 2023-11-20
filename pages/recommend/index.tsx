@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import { FiYoutube } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import YoutubeEmbed from '@/components/frontend/YoutubeModal';
+import YouTubeEmbed from '@/components/frontend/YouTubeModal';
 
 type PlayListType = {
   rid: number;
@@ -182,7 +182,7 @@ export default function MyRecommend() {
           </section>
         </section>
       </Layout>
-      {isEndedOpen && <YoutubeEmbed embedId={musicId as string} />}
+      {isEndedOpen && <YouTubeEmbed embedId={musicId as string} />}
       {loading && <Loading hint={hint} />}
     </>
   );

@@ -1,7 +1,7 @@
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 import GoogleLogo from '/public/images/google-logo.png';
-import styles from './_LoginBtn.module.scss';
+import styles from '@/styles/backend/_LoginBtn.module.scss';
 import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 
