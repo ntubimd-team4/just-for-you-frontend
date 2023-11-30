@@ -12,6 +12,7 @@ import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
 import YouTubeEmbed from '@/components/frontend/YouTubeModal';
 import Monster from '@/components/frontend/Monster';
+import { WarningModal } from '@/components/frontend/WarningModla';
 
 type StoryResType = {
   thumbnails: string,
@@ -25,6 +26,7 @@ type ResDataType = {
   sid: string,
   musicList: StoryResType[],
   value: string,
+  isHighLevel: boolean,
 }
 
 export default function Story() {
@@ -139,6 +141,7 @@ export default function Story() {
                 ))}
               </section>
             </section>
+            <WarningModal isHighLevel={resData?.isHighLevel || false} />
           </section>
         }
       </Layout>
