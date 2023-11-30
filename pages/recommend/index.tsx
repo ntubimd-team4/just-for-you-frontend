@@ -6,7 +6,6 @@ import styles from '@/styles/frontend/_Recommend.module.scss';
 import Loading from '@/components/frontend/Loading';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
-import { FiYoutube } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import YouTubeEmbed from '@/components/frontend/YouTubeModal';
 
@@ -25,8 +24,6 @@ export default function MyRecommend() {
   const [recommendData, setRecommendData] = useState<PlayListType[]>([]);
   const [userTagList, setUserTagList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isEndedOpen, setIsEndedOpen] = useState(false);
-  const [musicId, setMusicId] = useState('');
   const [activeTag, setActiveTag] = useState('all');
   const [searchInputValue, setSearchInputValue] = useState('');
   const hint = '載入中';
@@ -70,13 +67,6 @@ export default function MyRecommend() {
     };
 
     fetchData();
-  };
-
-  const videoEnbed = (musicId: string) => {
-    const embedId = musicId.split('?v=')[1];
-
-    setIsEndedOpen(true);
-    setMusicId(embedId);
   };
 
   const handleActiveTag = (tag: string) => {
@@ -144,9 +134,7 @@ export default function MyRecommend() {
                       <div className={styles.contentWrap}>
                         <h3 className={styles.song}>{music.song}</h3>
                         <div className={styles.func}>
-                          <span className={styles.play} onClick={() => videoEnbed(music.link)}>
-                            <FiYoutube />
-                          </span>
+                          <YouTubeEmbed embedId={music.link} />
                           <span className={styles.like}
                             onClick={() => handleCollection(music.rid)}>
                             {music.isCollection ?
@@ -182,7 +170,6 @@ export default function MyRecommend() {
           </section>
         </section>
       </Layout>
-      {isEndedOpen && <YouTubeEmbed embedId={musicId as string} />}
       {loading && <Loading hint={hint} />}
     </>
   );

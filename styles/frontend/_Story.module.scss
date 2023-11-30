@@ -205,15 +205,6 @@
                     .func {
                         display: flex;
                         align-items: center;
-
-                        .play {
-                            cursor: pointer;
-
-                            &:hover {
-                                color: #ffd37a;
-                                transform: scale(1.2);
-                            }
-                        }
                     }
                 }
             }

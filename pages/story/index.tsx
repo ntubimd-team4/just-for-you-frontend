@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Title } from '@/components/frontend/Illustrators/titleSVG';
 import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 import styles from '@/styles/frontend/_Story.module.scss';
-import { FiSend, FiYoutube } from 'react-icons/fi';
+import { FiSend } from 'react-icons/fi';
 import { TfiReload } from 'react-icons/tfi';
 import summaryAPI from '@/services/summaryRecordAPI';
 import Loading from '@/components/frontend/Loading';
@@ -12,6 +12,7 @@ import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
 import YouTubeEmbed from '@/components/frontend/YouTubeModal';
 import Monster from '@/components/frontend/Monster';
+import { WarningModal } from '@/components/frontend/WarningModla';
 
 type StoryResType = {
   thumbnails: string,
@@ -25,6 +26,7 @@ type ResDataType = {
   sid: string,
   musicList: StoryResType[],
   value: string,
+  isHighLevel: boolean,
 }
 
 export default function Story() {
@@ -32,9 +34,7 @@ export default function Story() {
   const router = useRouter();
   const [isTell, setIsTell] = useState(false);
   const [loading, setIsLoading] = useState(false);
-  const [isEndedOpen, setIsEndedOpen] = useState(false);
   const [story, setStory] = useState('');
-  const [musicId, setMusicId] = useState('');
   const [hint, setHint] = useState<string>('載入中');
   const [resData, setResData] = useState<ResDataType>();
   const [emotionText, setEmotionText] = useState('');
@@ -83,13 +83,6 @@ export default function Story() {
       setIsLoading(false);
       alert(err.message);
     }
-  };
-
-  const videoEnbed = (musicId: string) => {
-    const embedId = musicId.split('?v=')[1];
-
-    setIsEndedOpen(true);
-    setMusicId(embedId);
   };
 
   return (
@@ -141,19 +134,17 @@ export default function Story() {
                     <div className={styles.contentWrap}>
                       <h3 className={styles.song}>{music.song}</h3>
                       <div className={styles.func}>
-                        <span className={styles.play} onClick={() => videoEnbed(music.link)}>
-                          <FiYoutube />
-                        </span>
+                        <YouTubeEmbed embedId={music.link} />
                       </div>
                     </div>
                   </article>
                 ))}
               </section>
             </section>
+            <WarningModal isHighLevel={resData?.isHighLevel || false} />
           </section>
         }
       </Layout>
-      {isEndedOpen && <YouTubeEmbed embedId={musicId as string} />}
       {loading && <Loading hint={hint} />}
     </>
   );

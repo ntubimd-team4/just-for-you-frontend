@@ -146,18 +146,9 @@
                         display: flex;
                         align-items: center;
 
-                        .play {
-                            margin: 0 1rem;
-                            cursor: pointer;
-
-                            &:hover {
-                                color: #ffd37a;
-                                transform: scale(1.2);
-                            }
-                        }
-
                         .like {
                             cursor: pointer;
+                            margin-left: 1rem;
 
                             &:hover {
                                 color: rgb(255, 121, 121);
