@@ -1,8 +1,7 @@
 import Layout from '@/components/frontend/Layout';
 import styles from '@/styles/frontend/_Login.module.scss';
-import Image from 'next/image';
-import GoogleLogo from '/public/images/google-logo.png';
 import { signIn } from 'next-auth/react';
+import { FaGoogle } from 'react-icons/fa';
 
 export default function Login() {
   const handleGoogleSignIn = async () => {
@@ -10,8 +9,8 @@ export default function Login() {
   };
 
   const LoginBtn = ({ role }: { role: string }) => (
-    <button className={styles.btn} onClick={handleGoogleSignIn}>
-      <Image src={GoogleLogo} alt={'google'} width={20} height={20} />
+    <button className={`${styles.btn} ${role === '學生' ? styles.student : styles.teacher}`} onClick={handleGoogleSignIn}>
+      <FaGoogle />
       <span>北商{role} Google 登入</span>
     </button>
   );
