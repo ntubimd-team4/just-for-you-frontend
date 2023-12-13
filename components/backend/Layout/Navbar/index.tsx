@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 import {
   Box, Flex, Avatar, HStack, IconButton, Button, Menu, MenuButton, MenuList, MenuItem,
-  useDisclosure, useColorModeValue, Stack, MenuGroup,
+  useDisclosure, useColorModeValue, MenuGroup,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useAuthContext } from '@/context/authContext';
-import { MangerLinks, StudentLinks, TeacherLinks } from './navData';
+import { MangerLinks, TeacherLinks } from './navData';
 import Image from 'next/image';
 import Logo from '/public/images/logo.png';
 
@@ -75,16 +75,6 @@ export default function Navbar() {
           </Flex>
         }
       </Flex>
-
-      {isOpen ? (
-        <Box pb={4} display={{ 'md': 'none' }}>
-          <Stack as={'nav'} spacing={4}>
-            {(authorization === '學生' ? StudentLinks : TeacherLinks).map(data => (
-              <NavLink key={data.link} link={data.link}>{data.text}</NavLink>
-            ))}
-          </Stack>
-        </Box>
-      ) : null}
     </Box>
   );
 }

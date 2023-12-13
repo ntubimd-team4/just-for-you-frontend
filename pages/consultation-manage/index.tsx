@@ -1,6 +1,6 @@
 import Layout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
-import { AccountListType } from '@/types/User.interface';
+import { AccountListType } from '@/ts/interface/User.interface';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Button, Tag } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
