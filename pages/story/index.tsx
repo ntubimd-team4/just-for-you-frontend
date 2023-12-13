@@ -1,24 +1,14 @@
 import Layout from '@/components/frontend/Layout';
 import { useEffect, useState } from 'react';
-import { Title } from '@/components/frontend/Illustrators/titleSVG';
-import { Monsters } from '@/components/frontend/Illustrators/monstersSVG';
 import styles from '@/styles/frontend/_Story.module.scss';
 import { FiSend } from 'react-icons/fi';
-import { TfiReload } from 'react-icons/tfi';
 import summaryAPI from '@/services/summaryRecordAPI';
-import Loading from '@/components/frontend/Loading';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
-import YouTubeEmbed from '@/components/frontend/YouTubeModal';
-import Monster from '@/components/frontend/Monster';
-import { WarningModal } from '@/components/frontend/WarningModla';
-
-type StoryResType = {
-  thumbnails: string,
-  link: string,
-  song: string,
-}
+import { Avatar, Button } from '@chakra-ui/react';
+import MusicList from '@/components/frontend/MusicList';
+import { StoryResType } from '@/ts/types/MusicList.type';
 
 type ResDataType = {
   text: string,
@@ -29,17 +19,32 @@ type ResDataType = {
   isHighLevel: boolean,
 }
 
+type DialogType = {
+  img: string,
+  role: string,
+  context: string,
+  userName?: string,
+}
+
+const DialogArea = ({ img, role, context, userName }: DialogType) => (
+  <section className={`${styles.dialogWrap} ${role === 'student' && styles.studnet}`}>
+    <Avatar src={img} />
+    <div className={styles.dialog}>
+      {(role === 'teacher' && userName) && <p>您好！{userName}</p>}
+      {context}
+    </div>
+  </section>
+);
+
 export default function Story() {
   const { 'data': session, status } = useSession();
   const router = useRouter();
   const [isTell, setIsTell] = useState(false);
   const [loading, setIsLoading] = useState(false);
   const [story, setStory] = useState('');
-  const [hint, setHint] = useState<string>('載入中');
   const [resData, setResData] = useState<ResDataType>();
   const [emotionText, setEmotionText] = useState('');
   const [musicData, setMusicData] = useState<StoryResType[]>([]);
-  const handleStory = (event: any) => setStory(event?.target.value);
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -47,10 +52,12 @@ export default function Story() {
     }
   }, [router, status]);
 
+  const handleStory = (event: any) => setStory(event?.target.value);
+
   const tellStory = async () => {
     if (story !== '') {
       setIsLoading(true);
-      setHint('情緒辨識中');
+      setMusicData([]);
       try {
         const response = await summaryAPI.postSummary({ 'prompt': story });
 
@@ -60,6 +67,7 @@ export default function Story() {
         setMusicData(response.data.musicList);
         setEmotionText(response.data.text);
         setIsTell(true);
+        setStory('');
       } catch (err: any) {
         setIsLoading(false);
         alert(err.message);
@@ -71,7 +79,6 @@ export default function Story() {
 
   const reRecommend = async () => {
     setIsLoading(true);
-    setHint('重新推薦音樂給您');
     try {
       const response = await recommendAPI.getReRecommend(resData?.sid);
 
@@ -88,64 +95,49 @@ export default function Story() {
   return (
     <>
       <Layout>
-        {!isTell ?
-          <section className={styles.storyConatiner}>
-            <Title />
-            <div>
-              <Monsters />
-              <section className={styles.text}>
-                <textarea onChange={(e: any) => handleStory(e)} cols={30} rows={2} className={styles.textarea} placeholder="您有甚麼煩惱呢？" />
-                <button className={`${styles.sendBtn} ${story !== '' ? styles.available : styles.disable}`} onClick={() => tellStory()}><FiSend /></button>
-              </section>
-            </div>
-          </section> :
-          <section className={styles.responseContainer}>
-            <div className={styles.role}>
-              <div className={styles.speechBubble}>
-                <div className={styles.content}>
-                  <h2 className={styles.title}>Hello!{' '}{session?.user?.name}</h2>
-                  <div className={styles.tagGroup}>
-                    {emotionText}
-                    <br />
-                    <p>我們想推薦您幾首歌，讓您聽聽！</p>
+        <section className={styles.storyConatiner}>
+          <div className={styles.chat}>
+            {loading ?
+              <DialogArea
+                img={'/images/avatar.png'}
+                role={'teacher'}
+                context={'情緒辨識中...'}
+              /> :
+              <DialogArea
+                img={'/images/avatar.png'}
+                userName={session?.user?.name as string}
+                role={'teacher'}
+                context={isTell ? emotionText : '歡迎來到諮屬於你，你可以在這邊告訴我們您的煩惱...'}
+              />
+            }
+            {musicData.length > 0 &&
+              <>
+                <DialogArea
+                  img={'/images/avatar.png'}
+                  role={'teacher'}
+                  context={'推薦給您以下音樂，希望您會喜歡！'}
+                />
+                <section className={styles.dialogWrap}>
+                  <Avatar src={'/images/avatar.png'} />
+                  <div className={`${styles.dialog} ${styles.music}`}>
+                    <MusicList musicData={musicData} />
                   </div>
-                </div>
-              </div>
-              <Monster color={resData?.color || ''} />
-            </div>
-            <section className={styles.recommendList}>
-              <section className={styles.playList}>
-                <div className={styles.head}>
-                  <h3>推薦清單</h3>
-                  <span className={styles.reSendBtn} onClick={() => reRecommend()}>
-                    <TfiReload />
-                  </span>
-                </div>
-                {musicData.map((music, index) => (
-                  <article className={styles.list} key={index}>
-                    <div className={styles.numWrap}>
-                      <h3>{index + 1}</h3>
-                    </div>
-                    <div className={styles.coverWrap}>
-                      <div className={styles.cover}>
-                        <img src={music.thumbnails} alt="cover" />
-                      </div>
-                    </div>
-                    <div className={styles.contentWrap}>
-                      <h3 className={styles.song}>{music.song}</h3>
-                      <div className={styles.func}>
-                        <YouTubeEmbed embedId={music.link} />
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </section>
+                </section>
+              </>
+            }
+          </div>
+          <div>
+            <section className={styles.text}>
+              <textarea value={story} onChange={(e: any) => handleStory(e)} cols={30}
+                rows={2} className={styles.textarea} placeholder="您有甚麼煩惱呢？" />
+              <Button className={`${styles.sendBtn} ${story !== '' ? styles.available : styles.disable}`}
+                onClick={() => tellStory()} isLoading={loading}>
+                <FiSend />
+              </Button>
             </section>
-            <WarningModal isHighLevel={resData?.isHighLevel || false} />
-          </section>
-        }
-      </Layout>
-      {loading && <Loading hint={hint} />}
+          </div>
+        </section>
+      </Layout >
     </>
   );
 }
