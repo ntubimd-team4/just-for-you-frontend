@@ -8,13 +8,9 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: #fff8e6;
+    background: rgba(255, 255, 255, 0.5);
     user-select: none;
     z-index: 999;
-
-    img {
-        width: 50%;
-    }
 
     .hint {
         font-size: 25px;

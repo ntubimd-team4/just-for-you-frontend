@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import loadingGIF from '@/public/images/loading.gif';
 import styles from '@/styles/frontend/_Loading.module.scss';
+import Layout from '../Layout';
 
 export default function Loading({ hint }: { hint: string }) {
   return (
-    <section className={styles.container}>
-      <Image src={loadingGIF} alt={''} />
-      <p className={styles.hint}>{hint}...</p>
-    </section>
+    <Layout>
+      <section className={styles.container}>
+        <p className={styles.hint}>{hint}...</p>
+      </section>
+    </Layout>
   );
 }

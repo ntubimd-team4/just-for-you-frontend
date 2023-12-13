@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import Logo from '@/public/images/logo.png';
 import styles from '@/styles/frontend/_Navbar.module.scss';
 import { FiMessageSquare, FiMusic } from 'react-icons/fi';
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import { Avatar, Button, Flex, Menu, MenuButton, MenuGroup, MenuItem, MenuList } from '@chakra-ui/react';
 import { useAuthContext } from '@/context/authContext';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
+  const router = useRouter();
   const { 'data': session, status } = useSession();
   const { authorization } = useAuthContext();
 
@@ -16,17 +16,21 @@ export default function Navbar() {
     localStorage.clear();
   };
 
+  const redirectMyMusic = () => {
+    router.push('/my-music');
+  };
+
   return (
     <nav className={styles.container}>
-      <Link href={'/'}>
-        <Image src={Logo} alt="logo" className={styles.logo} height={60} width={60} />
+      <Link className={styles.logo} href={'/'}>
+        Just Fout You
       </Link>
       {status === 'authenticated' &&
         <section className={styles.menu}>
           <Link href={'/story'}>
             <FiMessageSquare className={styles.icon} />
           </Link>
-          <Link href={'/recommend'}>
+          <Link href={'/my-music'}>
             <FiMusic className={styles.icon} />
           </Link>
           <Flex alignItems={'center'}>
@@ -44,6 +48,7 @@ export default function Navbar() {
               </MenuButton>
               <MenuList>
                 <MenuGroup title={`${session?.user?.name} ${authorization}`}>
+                  <MenuItem onClick={() => redirectMyMusic()}>我的音樂</MenuItem>
                   <MenuItem onClick={handleGoogleLogOut}>登出</MenuItem>
                 </MenuGroup>
               </MenuList>
