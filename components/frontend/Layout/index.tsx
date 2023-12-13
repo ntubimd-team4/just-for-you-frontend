@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import styles from '@/styles/frontend/_Layout.module.scss';
 import Navbar from './Navbar';
+import styles from '@/styles/frontend/_LayoutBackground.module.scss';
 
 export default function Layout({ children }: {
   children: React.ReactNode
@@ -17,12 +17,12 @@ export default function Layout({ children }: {
         <meta name="og:title" content="諮屬於你" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.container}>
+      <section className={styles.container}>
         <Navbar />
-        <section className={styles.content}>
+        <main>
           {children}
-        </section>
-      </main>
+        </main>
+      </section>
     </>
   );
 }

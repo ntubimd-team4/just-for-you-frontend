@@ -1,0 +1,69 @@
+.playList {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+
+    .list {
+        display: flex;
+        padding: 10px 1rem;
+        box-sizing: border-box;
+        border-radius: 10px;
+        user-select: none;
+        margin-right: 5px;
+
+        &:hover {
+            background-color: rgb(140, 140, 140);
+            color: #fff;
+        }
+
+        .numWrap {
+            width: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        .coverWrap {
+            margin-right: 1rem;
+
+            .cover {
+                border-radius: 5px;
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
+            }
+
+            img {
+                width: auto;
+                height: 100%;
+                transform: scale(2);
+            }
+        }
+
+        .contentWrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .func {
+                display: flex;
+                align-items: center;
+
+                .heart {
+                    cursor: pointer;
+                    margin: 0 1rem;
+
+                    &:hover {
+                        color: rgb(255, 121, 121);
+                        transform: scale(1.2);
+                    }
+                }
+
+                .isCollect {
+                    color: rgb(255, 121, 121);
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, RadioGroup, Stack, Radio } from '@chakra-ui/react';
-import { AccountListType } from '@/types/User.interface';
+import { AccountListType } from '@/ts/interface/User.interface';
 import { ChangeEvent, useEffect, useState } from 'react';
 import userAPI from '@/services/userAccountAPI';
 import { useRouter } from 'next/router';
