@@ -1,4 +1,4 @@
-import Layout from '@/components/frontend/Layout';
+import FrontendLayout from '@/components/frontend/Layout';
 import { useEffect, useState } from 'react';
 import styles from '@/styles/frontend/_Story.module.scss';
 import { FiSend } from 'react-icons/fi';

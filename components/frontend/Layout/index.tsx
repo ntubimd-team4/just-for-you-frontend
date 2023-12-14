@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import styles from '@/styles/frontend/_LayoutBackground.module.scss';
 
-export default function Layout({ children }: {
+export default function FrontendLayout({ children }: {
   children: React.ReactNode
 }) {
   return (

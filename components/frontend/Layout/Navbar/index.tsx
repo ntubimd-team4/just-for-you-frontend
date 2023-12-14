@@ -5,6 +5,8 @@ import { signOut, useSession } from 'next-auth/react';
 import { Avatar, Button, Flex, Menu, MenuButton, MenuGroup, MenuItem, MenuList } from '@chakra-ui/react';
 import { useAuthContext } from '@/context/authContext';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Logo from '/public/images/logoWithName.png';
 
 export default function Navbar() {
   const router = useRouter();
@@ -23,7 +25,7 @@ export default function Navbar() {
   return (
     <nav className={styles.container}>
       <Link className={styles.logo} href={'/'}>
-        Just Fout You
+        <Image src={Logo} alt={'Logo'} width={150} />
       </Link>
       {status === 'authenticated' &&
         <section className={styles.menu}>

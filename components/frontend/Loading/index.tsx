@@ -1,12 +1,13 @@
 import styles from '@/styles/frontend/_Loading.module.scss';
-import Layout from '../Layout';
 
-export default function Loading({ hint }: { hint: string }) {
+export default function Loading() {
+  const LoadingEffect = () => (
+    <section className={styles.container}>
+      <div className={styles.ripple}></div>
+    </section>
+  );
+
   return (
-    <Layout>
-      <section className={styles.container}>
-        <p className={styles.hint}>{hint}...</p>
-      </section>
-    </Layout>
+    <LoadingEffect />
   );
 }

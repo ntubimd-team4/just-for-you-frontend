@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import summaryAPI from '@/services/summaryRecordAPI';
 import userAPI from '@/services/userAccountAPI';
 import { AccountListType } from '@/ts/interface/User.interface';
@@ -91,7 +91,7 @@ export default function SummaryAssign() {
   };
 
   return (
-    <Layout>
+    <BackendLayout>
       <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>摘要分配</h1>
       <Tabs>
         <TabList>
@@ -108,6 +108,6 @@ export default function SummaryAssign() {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </Layout>
+    </BackendLayout>
   );
 }

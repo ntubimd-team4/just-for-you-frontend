@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import summaryAPI from '@/services/summaryRecordAPI';
 import styles from '@/styles/backend/_SummaryList.module.scss';
 import { Button } from '@chakra-ui/react';
@@ -63,7 +63,7 @@ export default function ConsultationDetail() {
   };
 
   return (
-    <Layout>
+    <BackendLayout>
       <div className={styles.head}>
         <h1>摘要紀錄</h1>
         <p>{detailData?.role}：{detailData?.userName}{' / '}{detailData?.department ? detailData?.department : '尚無科系'}</p>
@@ -80,7 +80,8 @@ export default function ConsultationDetail() {
                   <p>諮商主題：{data.topic}</p>
                   <p>摘要：{data.summary}</p>
                 </section>
-                <Button flex={1}
+                <Button
+                  flex={1}
                   fontSize={'sm'}
                   rounded={'full'}
                   _focus={{ 'bg': 'gray.200', }}
@@ -92,6 +93,6 @@ export default function ConsultationDetail() {
             </article>)
         }
       </section>
-    </Layout>
+    </BackendLayout>
   );
 }

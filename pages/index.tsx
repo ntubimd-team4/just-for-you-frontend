@@ -20,7 +20,7 @@ export default function Home() {
         router.push('/story');
       }
     } else if (status === 'loading') {
-      console.log('loading...');
+      <Loading />;
     } else {
       router.push('/login');
     }
@@ -38,7 +38,7 @@ export default function Home() {
         <meta name="og:title" content="諮屬於你" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loading hint={'載入中'} />
+      <Loading />
     </>
   );
 }
