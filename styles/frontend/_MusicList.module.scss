@@ -58,10 +58,10 @@
                         color: rgb(255, 121, 121);
                         transform: scale(1.2);
                     }
-                }
 
-                .isCollect {
-                    color: rgb(255, 121, 121);
+                    &.isCollect {
+                        color: rgb(255, 121, 121);
+                    }
                 }
             }
         }
