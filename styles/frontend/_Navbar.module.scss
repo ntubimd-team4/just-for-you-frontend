@@ -1,3 +1,5 @@
+@import "@/styles/base/mixin";
+
 .container {
     height: auto;
     display: flex;
@@ -5,10 +7,6 @@
     justify-content: space-between;
     z-index: 998;
     color: #fff;
-
-    .logo {
-        
-    }
 
     .menu {
         display: flex;
@@ -23,6 +21,14 @@
     cursor: pointer;
     margin-right: 2rem;
     color: #fff;
+
+    @include Small {
+        margin-right: 1rem;
+    }
+
+    @include X-Small {
+        margin-right: 0.8rem;
+    }
 
     &:hover {
         transform: scale(1.2);

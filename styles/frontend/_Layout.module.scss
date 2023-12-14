@@ -1,11 +1,34 @@
-.container {
-    min-height: 100vh;
-    width: 100vw;
-    background: #fff8e6;
-    padding: 0 5rem;
-    color: #222222;
+@import "@/styles/base/mixin";
 
-    .content {
-        padding-top: 130px;
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: url('/images/frontend-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem 8rem;
+    min-width: 375px;
+    min-height: 667px;
+
+    @include Large {
+        padding: 2rem 4rem;
     }
-}
+
+    @include Medium {
+        padding: 2rem;
+    }
+
+    @include Small {
+        padding: 1rem;
+    }
+  
+    main {
+      height: 100%;
+      padding-bottom: 2rem;
+    }
+  }
+  
+  .bg {
+    filter: blur(1px);
+  }

@@ -36,16 +36,14 @@ export default function MusicList({ musicData }: {musicData: PlayListType[]}) {
     <section className={styles.playList}>
       {listData.map((music, index) => (
         <article className={styles.list} key={index}>
-          <div className={styles.numWrap}>
-            <h3>{index + 1}</h3>
-          </div>
           <div className={styles.coverWrap}>
+            <h3>{index + 1}</h3>
             <div className={styles.cover}>
               <img src={music.thumbnails} alt="cover" />
             </div>
+            <h3>{music.song}</h3>
           </div>
           <div className={styles.contentWrap}>
-            <h3>{music.song}</h3>
             <div className={styles.func}>
               <span className={`${styles.heart} ${music.isCollection && styles.isCollect}`}
                 onClick={() => patchCollection(music.rid)}>

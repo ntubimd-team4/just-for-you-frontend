@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useAuthContext } from '@/context/authContext';
 import { useRouter } from 'next/router';
-import Loading from '@/components/frontend/Loading';
+import Loading from '@/components/base/Loading';
 import Head from 'next/head';
 
 export default function Home() {

@@ -1,13 +1,14 @@
+@import "@/styles/base/mixin";
+
 .playList {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     .list {
         display: flex;
-        padding: 10px 1rem;
-        box-sizing: border-box;
+        padding: 8px 10px;
         border-radius: 10px;
         user-select: none;
         margin-right: 5px;
@@ -17,20 +18,17 @@
             color: #fff;
         }
 
-        .numWrap {
-            width: 10%;
+        .coverWrap {
             display: flex;
             align-items: center;
-        }
-
-        .coverWrap {
-            margin-right: 1rem;
+            margin-right: auto;
 
             .cover {
                 border-radius: 5px;
                 width: 50px;
                 height: 50px;
                 overflow: hidden;
+                margin: 0 1rem;
             }
 
             img {
@@ -43,8 +41,7 @@
         .contentWrap {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 100%;
+            justify-content: flex-end;
 
             .func {
                 display: flex;
@@ -53,6 +50,10 @@
                 .heart {
                     cursor: pointer;
                     margin: 0 1rem;
+
+                    @include X-Small {
+                        margin: 0 0.5rem 0 1rem;
+                    }
 
                     &:hover {
                         color: rgb(255, 121, 121);

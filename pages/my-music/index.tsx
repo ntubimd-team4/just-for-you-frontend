@@ -9,7 +9,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useEffect, useState } from 'react';
 import Profile from '@/components/frontend/Profile';
-import Loading from '@/components/frontend/Loading';
+import Loading from '@/components/base/Loading';
 
 type UserTagList = {
   emotion_tag: string,

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
-import styles from '@/styles/frontend/_LayoutBackground.module.scss';
+import styles from '@/styles/frontend/_Layout.module.scss';
 
 export default function FrontendLayout({ children }: {
   children: React.ReactNode

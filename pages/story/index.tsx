@@ -9,7 +9,7 @@ import recommendAPI from '@/services/recommendAPI';
 import { Avatar, Button } from '@chakra-ui/react';
 import MusicList from '@/components/frontend/MusicList';
 import { PlayListType } from '@/ts/types/MusicList.type';
-import Loading from '@/components/frontend/Loading';
+import Loading from '@/components/base/Loading';
 import { IoReload } from 'react-icons/io5';
 
 type ResDataType = {
@@ -30,7 +30,7 @@ type DialogType = {
 
 const DialogArea = ({ img, role, context, userName }: DialogType) => (
   <section className={`${styles.dialogWrap} ${role === 'student' && styles.studnet}`}>
-    <Avatar src={img} />
+    <Avatar src={img} size={{ 'base': 'sm', 'sm': 'md' }} />
     <div className={styles.dialog}>
       {(role === 'teacher' && userName) && <p>您好！{userName}</p>}
       {context}
@@ -96,7 +96,7 @@ export default function Story() {
 
   return (
     <FrontendLayout>
-      <section className={styles.storyConatiner}>
+      <section className={styles.conatiner}>
         <div className={styles.chat}>
           {loading ?
             <DialogArea
@@ -119,7 +119,7 @@ export default function Story() {
                 context={'推薦給您以下音樂，希望您會喜歡！'}
               />
               <section className={styles.dialogWrap}>
-                <Avatar src={'/images/avatar.png'} />
+                <Avatar size={{ 'base': 'sm', 'sm': 'md' }} src={'/images/avatar.png'} />
                 <div>
                   <section className={`${styles.dialog} ${styles.music}`}>
                     <MusicList musicData={musicData} />
