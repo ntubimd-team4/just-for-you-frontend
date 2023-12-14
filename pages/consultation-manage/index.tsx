@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { AccountListType } from '@/ts/interface/User.interface';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Button, Tag } from '@chakra-ui/react';
@@ -31,7 +31,7 @@ export default function Consultation() {
   }, [router, status]);
 
   return (
-    <Layout>
+    <BackendLayout>
       <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>個案管理</h1>
       <TableContainer>
         <Table variant="simple">
@@ -53,7 +53,8 @@ export default function Consultation() {
                 <Td><Tag colorScheme={(data?.userSex === '男') ? 'blue' : (data?.userSex === '女') ? 'red' : ''}>
                   {data.userSex !== null ? data.userSex : '待填寫'}</Tag></Td>
                 <Td>
-                  <Button flex={1}
+                  <Button
+                    flex={1}
                     fontSize={'sm'}
                     rounded={'full'}
                     _focus={{ 'bg': 'gray.200', }}
@@ -67,6 +68,6 @@ export default function Consultation() {
           </Tbody>
         </Table>
       </TableContainer>
-    </Layout>
+    </BackendLayout>
   );
 }

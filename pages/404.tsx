@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import { Button } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
@@ -11,11 +11,11 @@ export default function Page404() {
   const route = useRouter();
 
   return (
-    <Layout>
+    <BackendLayout>
       <h2 style={title}>無此頁面...</h2>
-      <Button width="100%" colorScheme="green" color="white" my={5} variant="solid" onClick={() => route.push('/')}>
+      <Button width="100%" colorScheme="teal" color="white" my={5} variant="solid" onClick={() => route.push('/')}>
         回首頁
       </Button>
-    </Layout>
+    </BackendLayout>
   );
 }

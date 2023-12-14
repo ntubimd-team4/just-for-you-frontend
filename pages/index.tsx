@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useAuthContext } from '@/context/authContext';
 import { useRouter } from 'next/router';
-import Loading from '@/components/frontend/Loading';
+import Loading from '@/components/base/Loading';
 import Head from 'next/head';
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
         router.push('/story');
       }
     } else if (status === 'loading') {
-      console.log('loading...');
+      <Loading />;
     } else {
       router.push('/login');
     }
@@ -38,7 +38,7 @@ export default function Home() {
         <meta name="og:title" content="諮屬於你" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loading hint={'載入中'} />
+      <Loading />
     </>
   );
 }

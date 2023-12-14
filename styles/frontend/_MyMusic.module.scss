@@ -1,6 +1,12 @@
+@import "@/styles/base/mixin";
+
 .container {
     height: 100%;
     padding: 2rem 1rem;
+
+    @include Medium {
+        padding: 2rem 0;
+    }
 
     .content {
         display: flex;
@@ -10,17 +16,33 @@
         height: 100%;
         color: #000;
 
+        @include Large {
+            padding: 2rem;
+        }
+
+        @include X-Small {
+            padding: 1rem;
+        }
+
         .profile {
             width: 30%;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include Small {
+                display: none;
+            }
         }
 
         .musicList {
             width: 70%;
             height: 100%;
             overflow: hidden;
+
+            @include Small {
+                width: 100%;
+            }
         }
 
         .tabGroup {
@@ -29,6 +51,10 @@
             align-items: center;
             justify-content: space-between;
 
+            @include X-Small {
+                flex-direction: column;
+            }
+
             .tabList {
                 display: flex;
             }
@@ -36,6 +62,10 @@
             .filterList {
                 display: flex;
                 padding: 0 1px;
+
+                @include X-Small {
+                    margin: 1rem 0;
+                }
             }
         }
     }

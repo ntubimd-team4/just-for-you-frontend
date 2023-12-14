@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/base/_main.scss';
 import type { AppProps } from 'next/app';
 import { extendTheme } from '@chakra-ui/react';
 import { AuthProvider } from '@/context/authContext';

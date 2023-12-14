@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import userAPI from '@/services/userAccountAPI';
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Switch, Tag } from '@chakra-ui/react';
@@ -55,7 +55,7 @@ export default function AccountList() {
   };
 
   return (
-    <Layout>
+    <BackendLayout>
       <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>帳號管理</h1>
       <TableContainer>
         <Table variant="simple">
@@ -89,6 +89,6 @@ export default function AccountList() {
           </Tbody>
         </Table>
       </TableContainer>
-    </Layout>
+    </BackendLayout>
   );
 }

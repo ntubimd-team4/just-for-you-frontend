@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import summaryAPI from '@/services/summaryRecordAPI';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useEffect, useState } from 'react';
@@ -86,7 +86,7 @@ export default function ConsultationRecord() {
   };
 
   return (
-    <Layout>
+    <BackendLayout>
       <div className={styles.head}>
         <h1>摘要紀錄</h1>
         <p>{detailData?.role}：{detailData?.userName}{' / '}{detailData?.department ? detailData?.department : '尚無科系'}</p>
@@ -126,6 +126,6 @@ export default function ConsultationRecord() {
             <button className={styles.editBtn} onClick={() => setIsEditOpen(true)}>編輯紀錄</button>}
         </div>
       </section>
-    </Layout>
+    </BackendLayout>
   );
 }

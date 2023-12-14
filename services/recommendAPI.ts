@@ -25,6 +25,9 @@ const recommendAPI = {
 
   'patchCollention': (rid: any): Promise<Response> =>
     API.patch(PATCH_COLLECTION, rid),
+
+  'getCollention': (): Promise<Response> =>
+    API.get(PATCH_COLLECTION),
 };
 
 export default recommendAPI;

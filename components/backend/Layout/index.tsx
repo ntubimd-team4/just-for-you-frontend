@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react';
 
 const style = { 'minHeight': '80vh', };
 
-export default function Layout({ children }: {
+export default function BackendLayout({ children }: {
   children: React.ReactNode
 }) {
   return (

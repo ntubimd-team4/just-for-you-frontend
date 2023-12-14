@@ -1,4 +1,4 @@
-import Layout from '@/components/frontend/Layout';
+import FrontendLayout from '@/components/frontend/Layout';
 import styles from '@/styles/frontend/_Login.module.scss';
 import { signIn } from 'next-auth/react';
 import { FaGoogle } from 'react-icons/fa';
@@ -16,7 +16,7 @@ export default function Login() {
   );
 
   return (
-    <Layout>
+    <FrontendLayout>
       <section className={styles.container}>
         <div className={styles.items}>
           <p className={styles.mainTitle}>諮屬於你</p>
@@ -28,6 +28,6 @@ export default function Login() {
         </div>
         <div className={styles.items}></div>
       </section>
-    </Layout>
+    </FrontendLayout>
   );
 }

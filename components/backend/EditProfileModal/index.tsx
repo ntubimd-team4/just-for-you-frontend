@@ -38,6 +38,8 @@ export function EditProfileModal({ data }: { data: AccountListType }) {
       <Button flex={1}
         fontSize={'sm'}
         rounded={'full'}
+        colorScheme="teal"
+        variant="outline"
         _focus={{ 'bg': 'gray.200', }} onClick={onOpen} aria-label="編輯資料">
         編輯資料
       </Button>
@@ -72,7 +74,7 @@ export function EditProfileModal({ data }: { data: AccountListType }) {
           </ModalBody>
 
           <ModalFooter>
-            <Button onClick={patchAccount} colorScheme="blue" mr={3}>儲存</Button>
+            <Button onClick={patchAccount} colorScheme="teal" mr={3}>儲存</Button>
             <Button onClick={onClose}>取消</Button>
           </ModalFooter>
         </ModalContent>

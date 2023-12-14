@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import {
   Box, Flex, Avatar, HStack, IconButton, Button, Menu, MenuButton, MenuList, MenuItem,
-  useDisclosure, useColorModeValue, MenuGroup,
+  useDisclosure, useColorModeValue, MenuGroup, Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { signOut, useSession } from 'next-auth/react';
@@ -75,6 +75,15 @@ export default function Navbar() {
           </Flex>
         }
       </Flex>
+      {isOpen ? (
+        <Box pb={4} display={{ 'md': 'none' }}>
+          <Stack as={'nav'} spacing={4}>
+            {(authorization === '個案管理師' ? MangerLinks : TeacherLinks).map(data => (
+              <NavLink key={data.link} link={data.link}>{data.text}</NavLink>
+            ))}
+          </Stack>
+        </Box>
+      ) : null}
     </Box>
   );
 }

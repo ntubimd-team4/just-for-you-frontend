@@ -1,4 +1,4 @@
-import Layout from '@/components/backend/Layout';
+import BackendLayout from '@/components/backend/Layout';
 import summaryAPI from '@/services/summaryRecordAPI';
 import userAPI from '@/services/userAccountAPI';
 import { AccountListType } from '@/ts/interface/User.interface';
@@ -13,6 +13,7 @@ export default function SummaryAssign() {
   const [rowData, setRowData] = useState<AccountListType[]>([]);
   const [teacherList, setTeacherList] = useState([]);
   const [isAssign, setIsAssign] = useState(0);
+  const [level, setlevel] = useState('0');
 
   const TableList = () => (
     <TableContainer>
@@ -60,7 +61,7 @@ export default function SummaryAssign() {
     } else if (status === 'authenticated') {
       const fetchData = async () => {
         try {
-          const response = await summaryAPI.getAssignList(isAssign);
+          const response = await summaryAPI.getAssignList(isAssign, level);
           const teacherData = await userAPI.getTeacherList();
 
           setRowData(response.data);
@@ -72,7 +73,7 @@ export default function SummaryAssign() {
 
       fetchData();
     }
-  }, [isAssign, router, status]);
+  }, [isAssign, level, router, status]);
 
   const handleAssign = (e: ChangeEvent<HTMLSelectElement>, sid: string) => {
     const teacherId = e.target.value;
@@ -91,7 +92,7 @@ export default function SummaryAssign() {
   };
 
   return (
-    <Layout>
+    <BackendLayout>
       <h1 style={{ 'marginBottom': '1rem', 'fontSize': '25px' }}>摘要分配</h1>
       <Tabs>
         <TabList>
@@ -108,6 +109,6 @@ export default function SummaryAssign() {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </Layout>
+    </BackendLayout>
   );
 }
