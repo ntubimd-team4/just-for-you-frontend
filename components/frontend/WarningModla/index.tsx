@@ -1,4 +1,4 @@
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Input, useDisclosure, Button, FormControl, FormLabel, RadioGroup, Stack, Radio } from '@chakra-ui/react';
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -29,7 +29,7 @@ export function WarningModal({ isHighLevel }: { isHighLevel: boolean }) {
         </ModalBody>
 
         <ModalFooter>
-          <Button onClick={onClose}>確認</Button>
+          <Button colorScheme="teal" onClick={onClose}>確認</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

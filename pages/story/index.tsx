@@ -8,13 +8,15 @@ import { useSession } from 'next-auth/react';
 import recommendAPI from '@/services/recommendAPI';
 import { Avatar, Button } from '@chakra-ui/react';
 import MusicList from '@/components/frontend/MusicList';
-import { StoryResType } from '@/ts/types/MusicList.type';
+import { PlayListType } from '@/ts/types/MusicList.type';
+import Loading from '@/components/frontend/Loading';
+import { IoReload } from 'react-icons/io5';
 
 type ResDataType = {
   text: string,
   color: string,
   sid: string,
-  musicList: StoryResType[],
+  musicList: PlayListType[],
   value: string,
   isHighLevel: boolean,
 }
@@ -44,7 +46,7 @@ export default function Story() {
   const [story, setStory] = useState('');
   const [resData, setResData] = useState<ResDataType>();
   const [emotionText, setEmotionText] = useState('');
-  const [musicData, setMusicData] = useState<StoryResType[]>([]);
+  const [musicData, setMusicData] = useState<PlayListType[]>([]);
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -93,51 +95,55 @@ export default function Story() {
   };
 
   return (
-    <>
-      <Layout>
-        <section className={styles.storyConatiner}>
-          <div className={styles.chat}>
-            {loading ?
+    <FrontendLayout>
+      <section className={styles.storyConatiner}>
+        <div className={styles.chat}>
+          {loading ?
+            <DialogArea
+              img={'/images/avatar.png'}
+              role={'teacher'}
+              context={'情緒辨識中...'}
+            /> :
+            <DialogArea
+              img={'/images/avatar.png'}
+              userName={session?.user?.name as string}
+              role={'teacher'}
+              context={isTell ? emotionText : '歡迎來到諮屬於你，你可以在這邊告訴我們您的煩惱...'}
+            />
+          }
+          {musicData.length > 0 &&
+            <>
               <DialogArea
                 img={'/images/avatar.png'}
                 role={'teacher'}
-                context={'情緒辨識中...'}
-              /> :
-              <DialogArea
-                img={'/images/avatar.png'}
-                userName={session?.user?.name as string}
-                role={'teacher'}
-                context={isTell ? emotionText : '歡迎來到諮屬於你，你可以在這邊告訴我們您的煩惱...'}
+                context={'推薦給您以下音樂，希望您會喜歡！'}
               />
-            }
-            {musicData.length > 0 &&
-              <>
-                <DialogArea
-                  img={'/images/avatar.png'}
-                  role={'teacher'}
-                  context={'推薦給您以下音樂，希望您會喜歡！'}
-                />
-                <section className={styles.dialogWrap}>
-                  <Avatar src={'/images/avatar.png'} />
-                  <div className={`${styles.dialog} ${styles.music}`}>
+              <section className={styles.dialogWrap}>
+                <Avatar src={'/images/avatar.png'} />
+                <div>
+                  <section className={`${styles.dialog} ${styles.music}`}>
                     <MusicList musicData={musicData} />
-                  </div>
-                </section>
-              </>
-            }
-          </div>
-          <div>
-            <section className={styles.text}>
-              <textarea value={story} onChange={(e: any) => handleStory(e)} cols={30}
-                rows={2} className={styles.textarea} placeholder="您有甚麼煩惱呢？" />
-              <Button className={`${styles.sendBtn} ${story !== '' ? styles.available : styles.disable}`}
-                onClick={() => tellStory()} isLoading={loading}>
-                <FiSend />
-              </Button>
-            </section>
-          </div>
-        </section>
-      </Layout >
-    </>
+                  </section>
+                  <span className={styles.reSendBtn} onClick={() => reRecommend()}>
+                    重新推薦 <IoReload style={{ 'marginLeft': '0.5rem' }} />
+                  </span>
+                </div>
+              </section>
+            </>
+          }
+        </div>
+        <div>
+          <section className={styles.text}>
+            <textarea value={story} onChange={(e: any) => handleStory(e)} cols={30}
+              rows={2} className={styles.textarea} placeholder="您有甚麼煩惱呢？" />
+            <Button className={`${styles.sendBtn} ${story !== '' ? styles.available : styles.disable}`}
+              onClick={() => tellStory()} isLoading={loading}>
+              <FiSend />
+            </Button>
+          </section>
+        </div>
+      </section>
+      {loading && <Loading />}
+    </FrontendLayout >
   );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from '@/styles/frontend/_MusicList.module.scss';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import YouTubeEmbed from '../YouTubeModal';

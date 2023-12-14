@@ -25,10 +25,24 @@
             margin: 0 1rem;
             padding: 1rem;
             color: #000;
+            box-sizing: content-box;
             background-color: rgba(255, 255, 255, 0.8);
 
             &.music {
-                width: 50%;
+                width: 100%;
+            }
+        }
+
+        .reSendBtn {
+            color: #fff;
+            margin: 0.5rem 1rem;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                color: #ffe9bd;
             }
         }
     }
