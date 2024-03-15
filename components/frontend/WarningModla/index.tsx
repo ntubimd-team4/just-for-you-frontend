@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import PhoneForm from '/public/images/phone.jpg';
 
-export function WarningModal({ isHighLevel }: { isHighLevel: boolean }) {
-  const [isOpen, setIsOpen] = useState(isHighLevel);
+export function WarningModal() {
+  const [isOpen, setIsOpen] = useState(true);
   const { 'data': session } = useSession();
   const onClose = () => {
     setIsOpen(false);

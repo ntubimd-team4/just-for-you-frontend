@@ -11,6 +11,7 @@ import MusicList from '@/components/frontend/MusicList';
 import { PlayListType } from '@/ts/types/MusicList.type';
 import Loading from '@/components/base/Loading';
 import { IoReload } from 'react-icons/io5';
+import { WarningModal } from '@/components/frontend/WarningModla';
 
 type ResDataType = {
   text: string,
@@ -108,11 +109,16 @@ export default function Story() {
               img={'/images/avatar.png'}
               userName={session?.user?.name as string}
               role={'teacher'}
-              context={isTell ? emotionText : '歡迎來到諮屬於你，你可以在這邊告訴我們您的煩惱...'}
+              context={isTell ? emotionText : '歡迎來到諮屬於你，您可以在這邊告訴我們您的煩惱...'}
             />
           }
           {musicData.length > 0 &&
             <>
+              <DialogArea
+                img={'/images/avatar.png'}
+                role={'teacher'}
+                context={`我們感受到您可能有${resData?.value}的情緒。`}
+              />
               <DialogArea
                 img={'/images/avatar.png'}
                 role={'teacher'}
@@ -142,6 +148,7 @@ export default function Story() {
             </Button>
           </section>
         </div>
+        {resData?.isHighLevel && <WarningModal />}
       </section>
       {loading && <Loading />}
     </FrontendLayout >

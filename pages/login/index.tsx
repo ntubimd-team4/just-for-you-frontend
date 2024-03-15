@@ -25,8 +25,8 @@ export default function Login() {
             <LoginBtn role="學生" />
             <LoginBtn role="諮商師" />
           </div>
+          <p>* 目前僅限北商信箱登入</p>
         </div>
-        <div className={styles.items}></div>
       </section>
     </FrontendLayout>
   );

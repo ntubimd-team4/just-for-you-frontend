@@ -12,6 +12,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        color: #fff;
 
         @include Small {
             align-items: center;
