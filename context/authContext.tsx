@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         } catch (error: any) {
           signOut();
           localStorage.clear();
+          alert(error.message);
         }
       };
 

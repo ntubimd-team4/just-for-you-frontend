@@ -137,8 +137,8 @@ export default function MyMusic() {
                 </div>
                 {listType === recommendType &&
                   <div className={styles.filterList}>
-                    <Select rounded={10} placeholder="全部" size="sm" variant="filled" onChange={e => handleActiveTag(e)}>
-                      {userTagList.map((data, index) => (
+                    <Select rounded={10} size="sm" variant="filled" onChange={e => handleActiveTag(e)}>
+                      {[{ 'emotion_tag': 'all', 'description': '全部' }, ...userTagList].map((data, index) => (
                         <option key={index} value={data.emotion_tag}>{data.description}</option>
                       ))}
                     </Select>
